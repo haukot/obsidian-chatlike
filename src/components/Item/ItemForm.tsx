@@ -28,7 +28,8 @@ export function ItemForm({
 
   const clickOutsideRef = useOnclickOutside(
     () => {
-      setIsInputVisible(false);
+      // не хочу чтоб в кнопку превращалось
+      //setIsInputVisible(false);
     },
     {
       ignoreClass: c('ignore-click-outside'),
@@ -83,7 +84,7 @@ export function ItemForm({
           <MarkdownEditor
             ref={inputRef}
             className={c('item-input')}
-            placeholder={t('Card title...')}
+            placeholder={'Соблаговолите написать письмо..'}
             onEnter={onEnter}
             onEscape={clear}
             onSubmit={onSubmit}

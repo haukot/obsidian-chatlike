@@ -31,7 +31,7 @@ export const DraggableLane = Preact.memo(function DraggableLane({
 }: DraggableLaneProps) {
   const { stateManager, boardModifiers, view } =
     Preact.useContext(KanbanContext);
-  const [isItemInputVisible, setIsItemInputVisible] = Preact.useState(false);
+  const [isItemInputVisible, setIsItemInputVisible] = Preact.useState(true);
 
   const path = useNestedEntityPath(laneIndex);
   const laneWidth = stateManager.useSetting('lane-width');
@@ -49,6 +49,25 @@ export const DraggableLane = Preact.memo(function DraggableLane({
   const shouldPrepend = isCompactPrepend || insertionMethod === 'prepend';
 
   useDragHandle(measureRef, dragHandleRef);
+
+  const _firstRender = Preact.useEffect(() => {
+    view.getWindow().setTimeout(() => {
+      const laneItems = elementRef.current?.getElementsByClassName(
+        c('lane-items')
+      );
+
+      if (laneItems.length) {
+        animateScrollTo([0, shouldPrepend ? 0 : laneItems[0].scrollHeight], {
+          elementToScroll: laneItems[0],
+          speed: 1,
+          minDuration: 1,
+          easing: (x: number) => {
+            return x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
+          },
+        });
+      }
+    })
+  }, []);
 
   const addItems = (items: Item[]) => {
     boardModifiers[shouldPrepend ? 'prependItems' : 'appendItems'](
@@ -133,14 +152,6 @@ export const DraggableLane = Preact.memo(function DraggableLane({
         ref={elementRef}
         className={classcat([c('lane'), { 'will-prepend': shouldPrepend }])}
       >
-        <LaneHeader
-          dragHandleRef={dragHandleRef}
-          laneIndex={laneIndex}
-          lane={lane}
-          setIsItemInputVisible={
-            isCompactPrepend ? setIsItemInputVisible : undefined
-          }
-        />
 
         {shouldPrepend && (
           <ItemForm
