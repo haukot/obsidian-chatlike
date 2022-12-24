@@ -4,8 +4,8 @@ Hide dates from the main card text. This setting is designed to be used in conju
 
 Off:
 
-<img alt="Screen Shot 2021-09-15 at 5.54.15 PM.png" srcset="/obsidian-kanban/Assets/Screen%20Shot%202021-09-15%20at%205.54.15%20PM.png 2x">
+<img alt="Screen Shot 2021-09-15 at 5.54.15 PM.png" srcset="/obsidian-chatlike/Assets/Screen%20Shot%202021-09-15%20at%205.54.15%20PM.png 2x">
 
 On (default):
 
-<img alt="Screen Shot 2021-09-15 at 5.48.16 PM.png" srcset="/obsidian-kanban/Assets/Screen%20Shot%202021-09-15%20at%205.48.16%20PM.png 2x">
+<img alt="Screen Shot 2021-09-15 at 5.48.16 PM.png" srcset="/obsidian-chatlike/Assets/Screen%20Shot%202021-09-15%20at%205.48.16%20PM.png 2x">

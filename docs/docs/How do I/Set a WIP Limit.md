@@ -6,10 +6,10 @@ lane to 5, rename it to `In Progress (5)`.
 
 This limit will be displayed next to the item counter of the lane:
 
-<img alt="Screen Shot WIP-Limit.png" srcset="/obsidian-kanban/Assets/Screen%20Shot%20WIP-Limit.png 2x">
+<img alt="Screen Shot WIP-Limit.png" srcset="/obsidian-chatlike/Assets/Screen%20Shot%20WIP-Limit.png 2x">
 
 Once the number of cards exceeds the limit, the counter text will become bold:
 
-<img alt="Screen Shot WIP-Limit-exceeded.png" srcset="/obsidian-kanban/Assets/Screen%20Shot%20WIP-Limit-exceeded.png 2x">
+<img alt="Screen Shot WIP-Limit-exceeded.png" srcset="/obsidian-chatlike/Assets/Screen%20Shot%20WIP-Limit-exceeded.png 2x">
 
 To update the WIP limit, simply rename the lane specifying the new value.

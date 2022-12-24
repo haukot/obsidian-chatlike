@@ -4,8 +4,8 @@ By default, tags will display in a card's main text. This setting allows you to 
 
 Setting off:
 
-<img alt="Screen Shot 2021-09-14 at 11.44.32 AM.png" srcset="/obsidian-kanban/Assets/Screen%20Shot%202021-09-14%20at%2011.44.32%20AM.png 2x">
+<img alt="Screen Shot 2021-09-14 at 11.44.32 AM.png" srcset="/obsidian-chatlike/Assets/Screen%20Shot%202021-09-14%20at%2011.44.32%20AM.png 2x">
 
 Setting on:
 
-<img alt="Screen Shot 2021-09-14 at 11.49.10 AM.png" srcset="/obsidian-kanban/Assets/Screen%20Shot%202021-09-14%20at%2011.49.10%20AM.png 2x">
+<img alt="Screen Shot 2021-09-14 at 11.49.10 AM.png" srcset="/obsidian-chatlike/Assets/Screen%20Shot%202021-09-14%20at%2011.49.10%20AM.png 2x">

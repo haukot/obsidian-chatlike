@@ -1,10 +1,10 @@
 {
-  "id": "obsidian-kanban",
-  "name": "Kanban",
+  "id": "obsidian-chatlike",
+  "name": "Chatlike",
   "version": "1.5.1",
   "minAppVersion": "1.0.0",
-  "description": "Create markdown-backed Kanban boards in Obsidian.",
-  "author": "mgmeyers",
-  "authorUrl": "https://github.com/mgmeyers/obsidian-kanban",
+  "description": "Chatlike view for note.",
+  "author": "haukot",
+  "authorUrl": "https://github.com/haukot/obsidian-chatlike",
   "isDesktopOnly": false
 }

@@ -6,15 +6,15 @@ Images can be added to cards in two ways.
 
 Images can be embedded into Kanban cards just like you would in any other obsidian note.
 
-<img alt="Screen Shot 2021-09-16 at 9.15.04 AM.png" srcset="/obsidian-kanban/Assets/Screen%20Shot%202021-09-16%20at%209.15.04%20AM.png 2x">
+<img alt="Screen Shot 2021-09-16 at 9.15.04 AM.png" srcset="/obsidian-chatlike/Assets/Screen%20Shot%202021-09-16%20at%209.15.04%20AM.png 2x">
 
-<img alt="Screen Shot 2021-09-16 at 9.15.47 AM.png" srcset="/obsidian-kanban/Assets/Screen%20Shot%202021-09-16%20at%209.15.47%20AM.png 2x">
+<img alt="Screen Shot 2021-09-16 at 9.15.47 AM.png" srcset="/obsidian-chatlike/Assets/Screen%20Shot%202021-09-16%20at%209.15.47%20AM.png 2x">
 
 ### Displaying images from metadata
 
 To add an image to a card, first enable a [Linked page metadata](../Settings/Linked%20page%20metadata.md) key/value, with the key set to the metadata field containing an image. Toggle `Field contains markdown`.
 
-<img alt="Screen Shot How-to-add-metadata-to-card.png" srcset="/obsidian-kanban/Assets/Screen%20Shot%20How-to-add-metadata-to-card.png 2x">
+<img alt="Screen Shot How-to-add-metadata-to-card.png" srcset="/obsidian-chatlike/Assets/Screen%20Shot%20How-to-add-metadata-to-card.png 2x">
 
 #### Adding image to frontmatter
 
@@ -30,7 +30,7 @@ delivery-notes: "![[LinkToImage.png]]"
 
 ````
 
-<img alt="Screen Shot How-to-add-image-to-card.png" srcset="/obsidian-kanban/Assets/Screen%20Shot%20How-to-add-image-to-card.png 2x">
+<img alt="Screen Shot How-to-add-image-to-card.png" srcset="/obsidian-chatlike/Assets/Screen%20Shot%20How-to-add-image-to-card.png 2x">
 
 #### Adding image to inline metadata
 
