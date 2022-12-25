@@ -13,3 +13,9 @@ package-lock.json
 yarn*
 dist
 test-vault/
+
+# compiled dev plugin
+main.js
+styles.css
+.hotreload
+data.json

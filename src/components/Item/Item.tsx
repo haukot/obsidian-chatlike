@@ -170,8 +170,10 @@ export const DraggableItem = Preact.memo(function DraggableItem(
     }
   }
 
+  // for dnd
+  //<div ref={measureRef} className={c('item-drag-point')}>::</div>
   return (
-    <div ref={measureRef} className={c('item-wrapper')}>
+    <div className={c('item-wrapper')}>
       <div
         ref={elementRef}
         className={classcat([c('item'), ...classModifiers])}
