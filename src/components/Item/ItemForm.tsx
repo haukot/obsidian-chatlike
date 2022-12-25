@@ -70,6 +70,7 @@ export function ItemForm({
 
   const onSubmit = () => {
     const title = itemTitle.trim();
+    // добавляем дату
 
     if (title) {
       addItemsFromStrings([title]);

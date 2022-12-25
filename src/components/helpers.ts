@@ -8,7 +8,7 @@ import { StateManager } from 'src/StateManager';
 
 import { Board, DateColorKey, Item, TagColorKey } from './types';
 
-export const baseClassName = 'kanban-plugin';
+export const baseClassName = 'chatlike-plugin';
 
 export function noop() {}
 

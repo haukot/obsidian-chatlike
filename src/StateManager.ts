@@ -355,7 +355,7 @@ export class StateManager {
       children: [],
       data: {
         archive: [],
-        settings: { 'kanban-plugin': 'basic' },
+        settings: { 'chatlike-plugin': 'basic' },
         frontmatter: {},
         isSearching: false,
         errors: [],

@@ -5,7 +5,7 @@ import { t } from 'src/lang/helpers';
 import { KanbanSettings } from 'src/Settings';
 import { StateManager } from 'src/StateManager';
 
-export const frontMatterKey = 'kanban-plugin';
+export const frontMatterKey = 'chatlike-plugin';
 
 export enum ParserFormats {
   List,

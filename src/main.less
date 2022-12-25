@@ -8,11 +8,11 @@
   }
 }
 
-.kanban-plugin {
+.chatlike-plugin {
   --lane-width: 272px;
 }
 
-.kanban-plugin {
+.chatlike-plugin {
   contain: content;
   height: 100%;
   width: 100%;
@@ -21,7 +21,7 @@
   flex-direction: column;
 }
 
-.kanban-plugin.something-is-dragging {
+.chatlike-plugin.something-is-dragging {
   cursor: grabbing;
   cursor: -webkit-grabbing;
 
@@ -30,16 +30,16 @@
   }
 }
 
-.kanban-plugin__item button,
-.kanban-plugin__lane button,
-.kanban-plugin button {
+.chatlike-plugin__item button,
+.chatlike-plugin__lane button,
+.chatlike-plugin button {
   line-height: 1;
   padding: 10px 12px;
   margin: 0;
   transition: 100ms color, 100ms background-color;
 }
 
-.kanban-plugin__search-wrapper {
+.chatlike-plugin__search-wrapper {
   width: 100%;
   position: sticky;
   top: 0;
@@ -53,7 +53,7 @@
   border-bottom: 1px solid var(--background-modifier-border);
 }
 
-button.kanban-plugin__search-cancel-button {
+button.chatlike-plugin__search-cancel-button {
   display: flex;
   line-height: 1;
   padding: 6px;
@@ -64,11 +64,11 @@ button.kanban-plugin__search-cancel-button {
   font-size: 16px;
 }
 
-button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
+button.chatlike-plugin__search-cancel-button .chatlike-plugin__icon {
   display: flex;
 }
 
-.kanban-plugin__icon {
+.chatlike-plugin__icon {
   display: inline-block;
   line-height: 1;
   > svg {
@@ -77,7 +77,7 @@ button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
   }
 }
 
-.kanban-plugin__board {
+.chatlike-plugin__board {
   display: flex;
   width: 100%;
   height: 100%;
@@ -91,11 +91,11 @@ button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
   }
 }
 
-.kanban-plugin__board.is-adding-lane > div {
+.chatlike-plugin__board.is-adding-lane > div {
   padding-right: calc(250px + 1rem);
 }
 
-.kanban-plugin__lane-wrapper {
+.chatlike-plugin__lane-wrapper {
   display: flex;
   flex-shrink: 0;
   margin-right: 10px;
@@ -104,7 +104,7 @@ button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
   /* width: var(--lane-width); */
 }
 
-.kanban-plugin__lane {
+.chatlike-plugin__lane {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -113,21 +113,21 @@ button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
   border: 1px solid var(--background-modifier-border);
 }
 
-.kanban-plugin__placeholder.kanban-plugin__lane-placeholder {
+.chatlike-plugin__placeholder.chatlike-plugin__lane-placeholder {
   height: 100%;
   flex-grow: 1;
   margin-right: 5px;
 }
 
-.kanban-plugin__lane.is-hidden {
+.chatlike-plugin__lane.is-hidden {
   display: none;
 }
 
-.kanban-plugin__lane button {
+.chatlike-plugin__lane button {
   padding: 8px 10px;
 }
 
-.kanban-plugin__lane-form-wrapper {
+.chatlike-plugin__lane-form-wrapper {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -140,12 +140,12 @@ button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
     0px 2px 10px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.kanban-plugin__lane-input-wrapper {
+.chatlike-plugin__lane-input-wrapper {
   padding: 10px;
 }
 
-.kanban-plugin__item-input-actions,
-.kanban-plugin__lane-input-actions {
+.chatlike-plugin__item-input-actions,
+.chatlike-plugin__lane-input-actions {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -156,8 +156,8 @@ button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
   }
 }
 
-.kanban-plugin__item-action-add,
-.kanban-plugin__lane-action-add {
+.chatlike-plugin__item-action-add,
+.chatlike-plugin__lane-action-add {
   background-color: var(--interactive-accent);
   color: var(--text-on-accent);
   &:hover {
@@ -165,7 +165,7 @@ button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
   }
 }
 
-.kanban-plugin__lane-header-wrapper {
+.chatlike-plugin__lane-header-wrapper {
   padding: 8px 12px 8px 8px;
   display: flex;
   align-items: center;
@@ -174,11 +174,11 @@ button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
   border-bottom: 1px solid var(--background-modifier-border);
 }
 
-.will-prepend .kanban-plugin__lane-header-wrapper {
+.will-prepend .chatlike-plugin__lane-header-wrapper {
   border-bottom: none;
 }
 
-.kanban-plugin__lane-grip {
+.chatlike-plugin__lane-grip {
   cursor: grab;
   flex-grow: 0;
   margin-right: 5px;
@@ -188,12 +188,12 @@ button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
   }
 }
 
-.kanban-plugin__lane-grip > svg {
+.chatlike-plugin__lane-grip > svg {
   display: block;
   height: 1rem;
 }
 
-.kanban-plugin__lane-title {
+.chatlike-plugin__lane-title {
   font-weight: 600;
   font-size: 0.875rem;
   flex-grow: 1;
@@ -202,15 +202,15 @@ button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
   flex-direction: column;
 }
 
-.kanban-plugin__lane-title-text {
+.chatlike-plugin__lane-title-text {
   flex-grow: 1;
 }
 
-div.kanban-plugin__markdown-preview-view > div > * {
+div.chatlike-plugin__markdown-preview-view > div > * {
   overflow-wrap: anywhere;
 }
 
-div.kanban-plugin__lane-title-count {
+div.chatlike-plugin__lane-title-count {
   border-radius: 3px;
   color: var(--text-muted);
   display: block;
@@ -220,15 +220,15 @@ div.kanban-plugin__lane-title-count {
   margin-left: 5px;
 }
 
-div.kanban-plugin__lane-title-count.wip-exceeded {
+div.chatlike-plugin__lane-title-count.wip-exceeded {
   font-weight: bold;
   color: var(--text-normal);
   background-color: rgba(var(--background-modifier-error-rgb), 0.25);
 }
 
-.kanban-plugin__item button.kanban-plugin__item-prefix-button,
-.kanban-plugin__item button.kanban-plugin__item-postfix-button,
-.kanban-plugin__lane button.kanban-plugin__lane-settings-button {
+.chatlike-plugin__item button.chatlike-plugin__item-prefix-button,
+.chatlike-plugin__item button.chatlike-plugin__item-postfix-button,
+.chatlike-plugin__lane button.chatlike-plugin__lane-settings-button {
   font-size: 13px;
   line-height: 1;
   color: var(--text-muted);
@@ -248,41 +248,41 @@ div.kanban-plugin__lane-title-count.wip-exceeded {
   }
 }
 
-.kanban-plugin__item button.kanban-plugin__item-prefix-button {
+.chatlike-plugin__item button.chatlike-plugin__item-prefix-button {
   margin: 4px 7px 4px 0px;
   padding: 0;
 }
 
-.kanban-plugin__lane-action-wrapper,
-.kanban-plugin__item-edit-archive-button,
-.kanban-plugin__item-settings-actions .kanban-plugin__icon,
-.kanban-plugin__item-edit-archive-button > .kanban-plugin__icon,
-.kanban-plugin__item-prefix-button > .kanban-plugin__icon,
-.kanban-plugin__item-postfix-button > .kanban-plugin__icon,
-.kanban-plugin__lane-settings-button > .kanban-plugin__icon {
+.chatlike-plugin__lane-action-wrapper,
+.chatlike-plugin__item-edit-archive-button,
+.chatlike-plugin__item-settings-actions .chatlike-plugin__icon,
+.chatlike-plugin__item-edit-archive-button > .chatlike-plugin__icon,
+.chatlike-plugin__item-prefix-button > .chatlike-plugin__icon,
+.chatlike-plugin__item-postfix-button > .chatlike-plugin__icon,
+.chatlike-plugin__lane-settings-button > .chatlike-plugin__icon {
   display: flex;
 }
 
-.kanban-plugin__lane-settings-button-wrapper {
+.chatlike-plugin__lane-settings-button-wrapper {
   display: flex;
 }
 
-button.kanban-plugin__lane-settings-button
-  + button.kanban-plugin__lane-settings-button {
+button.chatlike-plugin__lane-settings-button
+  + button.chatlike-plugin__lane-settings-button {
   margin-left: 2px;
 }
 
-.kanban-plugin__lane-settings-button svg {
+.chatlike-plugin__lane-settings-button svg {
   width: 1em;
   height: 1em;
 }
 
-.kanban-plugin__lane-items-wrapper {
+.chatlike-plugin__lane-items-wrapper {
   margin: 4px;
   height: 100%;
 }
 
-.kanban-plugin__lane-items {
+.chatlike-plugin__lane-items {
   padding: 4px;
   margin: 0 4px;
   display: flex;
@@ -292,7 +292,7 @@ button.kanban-plugin__lane-settings-button
   }
 }
 
-.kanban-plugin__lane-items > .kanban-plugin__placeholder {
+.chatlike-plugin__lane-items > .chatlike-plugin__placeholder {
   flex-grow: 1;
   &:only-child {
     height: 2.55em;
@@ -304,12 +304,12 @@ button.kanban-plugin__lane-settings-button
 }
 
 .is-sorting
-  .kanban-plugin__lane-items
-  > .kanban-plugin__placeholder:only-child {
+  .chatlike-plugin__lane-items
+  > .chatlike-plugin__placeholder:only-child {
   border-color: hsla(var(--interactive-accent-hsl), 0.6);
 }
 
-.kanban-plugin__item-button-wrapper {
+.chatlike-plugin__item-button-wrapper {
   border-top: 1px solid var(--background-modifier-border);
   padding: 8px;
   flex-shrink: 0;
@@ -320,16 +320,16 @@ button.kanban-plugin__lane-settings-button
   }
 }
 
-.kanban-plugin__lane-header-wrapper + .kanban-plugin__item-button-wrapper {
+.chatlike-plugin__lane-header-wrapper + .chatlike-plugin__item-button-wrapper {
   border-top: none;
   border-bottom: 1px solid var(--background-modifier-border);
   padding: 4px 8px 8px;
 }
 
-.kanban-plugin__item-form {
+.chatlike-plugin__item-form {
   border-top: 1px solid var(--background-modifier-border);
   padding: 8px;
-  .kanban-plugin__item-input-wrapper {
+  .chatlike-plugin__item-input-wrapper {
     padding: 6px 8px;
     border: 1px solid var(--background-modifier-border);
     background-color: var(--background-primary);
@@ -338,19 +338,19 @@ button.kanban-plugin__lane-settings-button
   }
 }
 
-.kanban-plugin__lane-header-wrapper + .kanban-plugin__item-form {
+.chatlike-plugin__lane-header-wrapper + .chatlike-plugin__item-form {
   border-top: none;
   border-bottom: 1px solid var(--background-modifier-border);
   padding: 4px 8px 8px;
 }
 
-.kanban-plugin__item-input-wrapper {
+.chatlike-plugin__item-input-wrapper {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.kanban-plugin button.kanban-plugin__item-submit-button {
+.chatlike-plugin button.chatlike-plugin__item-submit-button {
   background-color: var(--background-secondary-alt);
   flex-grow: 0;
   flex-shrink: 1;
@@ -360,30 +360,30 @@ button.kanban-plugin__lane-settings-button
   font-size: 14px;
 }
 
-button.kanban-plugin__new-item-button {
+button.chatlike-plugin__new-item-button {
   background-color: transparent;
   color: var(--text-muted);
 }
 
-.kanban-plugin__new-item-button:hover {
+.chatlike-plugin__new-item-button:hover {
   color: var(--text-on-accent);
   background-color: var(--interactive-accent-hover);
 }
 
-.kanban-plugin__item-wrapper {
+.chatlike-plugin__item-wrapper {
   display: flex;
   align-items: baseline;
 }
 
-.kanban-plugin__drag-container
-  > .kanban-plugin__item-wrapper
-  .kanban-plugin__item {
+.chatlike-plugin__drag-container
+  > .chatlike-plugin__item-wrapper
+  .chatlike-plugin__item {
   border-color: var(--interactive-accent);
   box-shadow: var(--shadow-s),
     0 0 0 2px hsla(var(--interactive-accent-hsl), 0.2);
 }
 
-.kanban-plugin__item {
+.chatlike-plugin__item {
   font-size: 0.875rem;
   border: 1px solid var(--background-modifier-border);
   border-radius: var(--input-radius);
@@ -400,17 +400,17 @@ button.kanban-plugin__new-item-button {
     font-size: 0.75rem;
     opacity: 0.5;
 
-    .kanban-plugin__item-metadata-wrapper {
+    .chatlike-plugin__item-metadata-wrapper {
       display: none;
     }
   }
 }
 
-.kanban-plugin__item-content-wrapper {
+.chatlike-plugin__item-content-wrapper {
   background: var(--background-primary);
 }
 
-.kanban-plugin__item-title-wrapper {
+.chatlike-plugin__item-title-wrapper {
   background: var(--background-primary);
   display: flex;
   padding: 6px 8px;
@@ -421,13 +421,13 @@ button.kanban-plugin__new-item-button {
   }
 }
 
-.kanban-plugin__item-title {
+.chatlike-plugin__item-title {
   width: 100%;
   line-height: var(--line-height-tight);
   overflow: hidden;
 }
 
-.kanban-plugin__markdown-preview-view {
+.chatlike-plugin__markdown-preview-view {
   font-family: var(--font-text, var(--default-font));
   font-size: 0.875rem;
   line-height: var(--line-height-tight);
@@ -442,64 +442,64 @@ button.kanban-plugin__new-item-button {
   // -webkit-user-select: unset;
 }
 
-.kanban-plugin__markdown-preview-view p,
-.kanban-plugin__markdown-preview-view ul,
-.kanban-plugin__markdown-preview-view ol,
-.kanban-plugin__markdown-preview-view blockquote {
+.chatlike-plugin__markdown-preview-view p,
+.chatlike-plugin__markdown-preview-view ul,
+.chatlike-plugin__markdown-preview-view ol,
+.chatlike-plugin__markdown-preview-view blockquote {
   margin-block-start: 0.66em;
   margin-block-end: 0.66em;
 }
 
-.kanban-plugin__markdown-preview-view blockquote {
+.chatlike-plugin__markdown-preview-view blockquote {
   margin-inline-start: 0;
   margin-inline-end: 0;
 }
 
-.kanban-plugin__markdown-preview-view ul ol,
-.kanban-plugin__markdown-preview-view ol ul,
-.kanban-plugin__markdown-preview-view ul ul,
-.kanban-plugin__markdown-preview-view ol ol {
+.chatlike-plugin__markdown-preview-view ul ol,
+.chatlike-plugin__markdown-preview-view ol ul,
+.chatlike-plugin__markdown-preview-view ul ul,
+.chatlike-plugin__markdown-preview-view ol ol {
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
 
-.kanban-plugin__markdown-preview-view > div > * {
+.chatlike-plugin__markdown-preview-view > div > * {
   overflow-x: auto;
   overflow-wrap: break-word;
 }
 
-.kanban-plugin__markdown-preview-view > div > *:first-child,
-.kanban-plugin__markdown-preview-view > div > .frontmatter-container + * {
+.chatlike-plugin__markdown-preview-view > div > *:first-child,
+.chatlike-plugin__markdown-preview-view > div > .frontmatter-container + * {
   margin-top: 0;
 }
 
-.kanban-plugin__markdown-preview-view > div > *:last-child {
+.chatlike-plugin__markdown-preview-view > div > *:last-child {
   margin-bottom: 0;
 }
 
-.kanban-plugin__markdown-preview-view ul,
-.kanban-plugin__markdown-preview-view ol {
+.chatlike-plugin__markdown-preview-view ul,
+.chatlike-plugin__markdown-preview-view ol {
   padding-inline-start: 24px;
 }
 
-.kanban-plugin__meta-value .kanban-plugin__markdown-preview-view p,
-.kanban-plugin__meta-value .kanban-plugin__markdown-preview-view {
+.chatlike-plugin__meta-value .chatlike-plugin__markdown-preview-view p,
+.chatlike-plugin__meta-value .chatlike-plugin__markdown-preview-view {
   font-size: inherit;
   color: inherit;
   line-height: inherit;
 }
 
-.kanban-plugin__markdown-preview-view.inline p,
-.kanban-plugin__markdown-preview-view.inline {
+.chatlike-plugin__markdown-preview-view.inline p,
+.chatlike-plugin__markdown-preview-view.inline {
   display: inline-block;
 }
 
-.kanban-plugin__markdown-preview-view .frontmatter,
-.kanban-plugin__markdown-preview-view .frontmatter-container {
+.chatlike-plugin__markdown-preview-view .frontmatter,
+.chatlike-plugin__markdown-preview-view .frontmatter-container {
   display: none;
 }
 
-.kanban-plugin__markdown-preview-view .file-link span {
+.chatlike-plugin__markdown-preview-view .file-link span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -509,60 +509,60 @@ button.kanban-plugin__new-item-button {
   top: 3px;
 }
 
-.kanban-plugin__embed-link-wrapper {
+.chatlike-plugin__embed-link-wrapper {
   padding: 2px;
   float: right;
 }
 
-.kanban-plugin__item-metadata-wrapper:not(:empty) {
+.chatlike-plugin__item-metadata-wrapper:not(:empty) {
   background-color: var(--background-primary-alt);
   padding: 6px 8px;
 }
 
-.kanban-plugin__item-metadata:not(:empty) {
+.chatlike-plugin__item-metadata:not(:empty) {
   padding-top: 5px;
   font-size: 12px;
   font-weight: 500;
   color: var(--text-muted);
 }
 
-.kanban-plugin__item-metadata > span {
+.chatlike-plugin__item-metadata > span {
   display: block;
 }
 
-.kanban-plugin__item-metadata .is-button {
+.chatlike-plugin__item-metadata .is-button {
   cursor: var(--cursor);
   &:hover {
     color: var(--text-normal);
   }
 }
 
-.kanban-plugin__item-metadata-date-relative::first-letter {
+.chatlike-plugin__item-metadata-date-relative::first-letter {
   text-transform: uppercase;
 }
 
-.kanban-plugin__item-metadata a {
+.chatlike-plugin__item-metadata a {
   text-decoration: none;
 }
 
-.kanban-plugin__item-metadata-time::before {
+.chatlike-plugin__item-metadata-time::before {
   content: ' • ';
 }
 
-.kanban-plugin__item-metadata-time.is-button:hover::before {
+.chatlike-plugin__item-metadata-time.is-button:hover::before {
   color: var(--text-muted);
 }
 
-.kanban-plugin__item-tags:not(:empty) {
+.chatlike-plugin__item-tags:not(:empty) {
   padding-top: 2px;
 }
 
-.kanban-plugin__item-tag {
+.chatlike-plugin__item-tag {
   display: inline-block;
   margin-right: 4px;
 }
 
-.kanban-plugin__item-tags .kanban-plugin__item-tag {
+.chatlike-plugin__item-tags .chatlike-plugin__item-tag {
   font-size: 12px;
   background-color: var(
     --tag-background-color,
@@ -572,13 +572,13 @@ button.kanban-plugin__new-item-button {
   margin: 3px 3px 0 0;
 }
 
-.kanban-plugin__item-tag.is-search-match,
-.kanban-plugin__item-tags .kanban-plugin__item-tag.is-search-match {
+.chatlike-plugin__item-tag.is-search-match,
+.chatlike-plugin__item-tags .chatlike-plugin__item-tag.is-search-match {
   background-color: var(--text-highlight-bg);
   color: var(--text-normal);
 }
 
-.kanban-plugin__meta-table {
+.chatlike-plugin__meta-table {
   width: 100%;
   margin: 0;
   line-height: 1.5;
@@ -599,41 +599,41 @@ button.kanban-plugin__new-item-button {
   }
 }
 
-.kanban-plugin__meta-table td.kanban-plugin__meta-key {
+.chatlike-plugin__meta-table td.chatlike-plugin__meta-key {
   white-space: nowrap;
   padding-right: 5px;
   color: var(--text-muted);
 }
 
-.kanban-plugin__meta-table td.kanban-plugin__meta-key.is-search-match > span {
+.chatlike-plugin__meta-table td.chatlike-plugin__meta-key.is-search-match > span {
   background-color: var(--text-highlight-bg);
   color: var(--text-normal);
 }
 
-.kanban-plugin__meta-value {
+.chatlike-plugin__meta-value {
   white-space: pre-wrap;
   display: flex;
 }
 
-.kanban-plugin__meta-value > .is-search-match,
-.kanban-plugin__meta-value.is-search-match {
+.chatlike-plugin__meta-value > .is-search-match,
+.chatlike-plugin__meta-value.is-search-match {
   background-color: var(--text-highlight-bg);
   color: var(--text-normal);
 }
 
-.kanban-plugin__item-prefix-button-wrapper,
-.kanban-plugin__item-postfix-button-wrapper {
+.chatlike-plugin__item-prefix-button-wrapper,
+.chatlike-plugin__item-postfix-button-wrapper {
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
   align-self: start;
 }
 
-.kanban-plugin__item-prefix-button-wrapper {
+.chatlike-plugin__item-prefix-button-wrapper {
   flex-direction: column;
 }
 
-.kanban-plugin__item-prefix-button-wrapper input[type='checkbox'] {
+.chatlike-plugin__item-prefix-button-wrapper input[type='checkbox'] {
   margin: 4px 7px 4px 0px;
   width: 15px;
   height: 15px;
@@ -643,7 +643,7 @@ button.kanban-plugin__new-item-button {
   }
 }
 
-button.kanban-plugin__item-postfix-button {
+button.chatlike-plugin__item-postfix-button {
   visibility: hidden;
   opacity: 0;
   transition: 100ms opacity;
@@ -651,18 +651,18 @@ button.kanban-plugin__item-postfix-button {
   align-self: flex-start;
 }
 
-button.kanban-plugin__item-postfix-button.is-enabled,
-.kanban-plugin__item:hover button.kanban-plugin__item-postfix-button {
+button.chatlike-plugin__item-postfix-button.is-enabled,
+.chatlike-plugin__item:hover button.chatlike-plugin__item-postfix-button {
   visibility: visible;
   opacity: 1;
 }
 
-.kanban-plugin__item-settings-actions {
+.chatlike-plugin__item-settings-actions {
   padding: 5px;
   display: flex;
 }
 
-.kanban-plugin__item-settings-actions > button {
+.chatlike-plugin__item-settings-actions > button {
   line-height: 1;
   display: flex;
   align-items: center;
@@ -671,54 +671,54 @@ button.kanban-plugin__item-postfix-button.is-enabled,
   width: 100%;
 }
 
-.kanban-plugin__lane-action-wrapper button > .kanban-plugin__icon,
-.kanban-plugin__item-settings-actions button > .kanban-plugin__icon {
+.chatlike-plugin__lane-action-wrapper button > .chatlike-plugin__icon,
+.chatlike-plugin__item-settings-actions button > .chatlike-plugin__icon {
   margin-right: 5px;
 }
 
-.kanban-plugin__item-settings-actions > button:first-child,
-.kanban-plugin__lane-action-wrapper > button:first-child {
+.chatlike-plugin__item-settings-actions > button:first-child,
+.chatlike-plugin__lane-action-wrapper > button:first-child {
   margin-right: 2.5px;
 }
 
-.kanban-plugin__item-settings-actions > button:last-child,
-.kanban-plugin__lane-action-wrapper > button:last-child {
+.chatlike-plugin__item-settings-actions > button:last-child,
+.chatlike-plugin__lane-action-wrapper > button:last-child {
   margin-left: 2.5px;
 }
 
-.kanban-plugin__archive-lane-button,
-.kanban-plugin__item-button-archive {
+.chatlike-plugin__archive-lane-button,
+.chatlike-plugin__item-button-archive {
   color: var(--text-muted);
   border: 1px solid var(--background-modifier-border);
 }
 
-.kanban-plugin__archive-lane-button:hover,
-.kanban-plugin__item-button-archive:hover {
+.chatlike-plugin__archive-lane-button:hover,
+.chatlike-plugin__item-button-archive:hover {
   color: var(--text-normal);
 }
 
-.kanban-plugin__item-button-delete {
+.chatlike-plugin__item-button-delete {
   border: 1px solid rgba(var(--background-modifier-error-rgb), 0.15);
   color: rgba(var(--background-modifier-error-rgb), 1);
 }
 
-.kanban-plugin__item-button-delete:hover {
+.chatlike-plugin__item-button-delete:hover {
   background-color: rgba(var(--background-modifier-error-rgb), 0.2);
   color: var(--text-error);
 }
 
-.theme-dark .kanban-plugin__item-button-delete {
+.theme-dark .chatlike-plugin__item-button-delete {
   background-color: transparent;
   border: 1px solid rgba(var(--background-modifier-error-rgb), 1);
   color: var(--text-error);
 }
 
-.theme-dark .kanban-plugin__item-button-delete:hover {
+.theme-dark .chatlike-plugin__item-button-delete:hover {
   background-color: rgba(var(--background-modifier-error-rgb), 1);
   color: var(--text-error);
 }
 
-.kanban-plugin__checkbox-wrapper {
+.chatlike-plugin__checkbox-wrapper {
   border-top: 1px solid var(--background-modifier-border);
   border-bottom: 1px solid var(--background-modifier-border);
   padding: 10px;
@@ -727,30 +727,30 @@ button.kanban-plugin__item-postfix-button.is-enabled,
   align-items: center;
 }
 
-.kanban-plugin__checkbox-wrapper .checkbox-container {
+.chatlike-plugin__checkbox-wrapper .checkbox-container {
   flex-shrink: 0;
   flex-grow: 0;
   margin-left: 15px;
 }
 
-.kanban-plugin__checkbox-label {
+.chatlike-plugin__checkbox-label {
   font-size: 0.8125rem;
   line-height: 1.4;
 }
 
-.kanban-plugin__lane-setting-wrapper > div {
+.chatlike-plugin__lane-setting-wrapper > div {
   border-top: none;
   border-bottom: none;
   padding: 10px 15px;
   margin-bottom: 0;
 }
 
-.kanban-plugin__lane-setting-wrapper > div:last-child {
+.chatlike-plugin__lane-setting-wrapper > div:last-child {
   border-bottom: 1px solid var(--background-modifier-border);
   margin-bottom: 10px;
 }
 
-.kanban-plugin__action-confirm-wrapper {
+.chatlike-plugin__action-confirm-wrapper {
   border: 1px solid rgba(var(--background-modifier-error-rgb), 0.2);
   background-color: rgba(var(--background-modifier-error-rgb), 0.1);
   border-radius: 4px;
@@ -758,12 +758,12 @@ button.kanban-plugin__item-postfix-button.is-enabled,
   margin: 5px 10px;
 }
 
-.theme-dark .kanban-plugin__action-confirm-wrapper {
+.theme-dark .chatlike-plugin__action-confirm-wrapper {
   border: 1px solid rgba(var(--background-modifier-error-rgb), 1);
 }
 
-.kanban-plugin__delete-lane-button,
-.kanban-plugin__archive-lane-button {
+.chatlike-plugin__delete-lane-button,
+.chatlike-plugin__archive-lane-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -771,35 +771,35 @@ button.kanban-plugin__item-postfix-button.is-enabled,
   width: 50%;
 }
 
-.kanban-plugin__delete-lane-button {
+.chatlike-plugin__delete-lane-button {
   border: 1px solid rgba(var(--background-modifier-error-rgb), 0.15);
   color: rgba(var(--background-modifier-error-rgb), 1);
 }
 
-.kanban-plugin__delete-lane-button:hover {
+.chatlike-plugin__delete-lane-button:hover {
   background-color: rgba(var(--background-modifier-error-rgb), 0.2);
   color: var(--text-error);
 }
 
-.theme-dark .kanban-plugin__delete-lane-button {
+.theme-dark .chatlike-plugin__delete-lane-button {
   background-color: transparent;
   border: 1px solid rgba(var(--background-modifier-error-rgb), 1);
   color: var(--text-error);
 }
 
-.theme-dark .kanban-plugin__delete-lane-button:hover {
+.theme-dark .chatlike-plugin__delete-lane-button:hover {
   background-color: rgba(var(--background-modifier-error-rgb), 1);
   color: var(--text-error);
 }
 
-.kanban-plugin__action-confirm-text {
+.chatlike-plugin__action-confirm-text {
   font-size: 0.875rem;
   color: var(--text-error);
   margin-bottom: 10px;
   line-height: 1.4;
 }
 
-button.kanban-plugin__confirm-action-button {
+button.chatlike-plugin__confirm-action-button {
   border: 1px solid rgba(var(--background-modifier-error-rgb), 0.2);
   margin-right: 5px;
   color: var(--text-error);
@@ -809,34 +809,34 @@ button.kanban-plugin__confirm-action-button {
   }
 }
 
-button.kanban-plugin__cancel-action-button {
+button.chatlike-plugin__cancel-action-button {
   border: 1px solid var(--background-modifier-border);
 }
 
 /* Inputs */
 
-.kanban-plugin__grow-wrap {
+.chatlike-plugin__grow-wrap {
   width: 100%;
   display: grid;
 }
-.kanban-plugin__grow-wrap::after {
+.chatlike-plugin__grow-wrap::after {
   content: attr(data-replicated-value) ' ';
   white-space: pre-wrap;
   visibility: hidden;
 }
-.kanban-plugin__grow-wrap > textarea {
+.chatlike-plugin__grow-wrap > textarea {
   resize: none;
   overflow: hidden;
   tab-size: 2;
 }
 
-.kanban-plugin__grow-wrap > textarea:focus {
+.chatlike-plugin__grow-wrap > textarea:focus {
   border: none;
   box-shadow: none;
 }
 
-.kanban-plugin__grow-wrap > textarea,
-.kanban-plugin__grow-wrap::after {
+.chatlike-plugin__grow-wrap > textarea,
+.chatlike-plugin__grow-wrap::after {
   /* Identical styling required! */
   border: none;
   border-radius: 0;
@@ -850,7 +850,7 @@ button.kanban-plugin__cancel-action-button {
   white-space: pre-wrap;
 }
 
-.kanban-plugin__autocomplete {
+.chatlike-plugin__autocomplete {
   font-size: 0.875rem;
   border: 1px solid var(--background-modifier-border);
   background-color: var(--background-primary);
@@ -866,64 +866,64 @@ button.kanban-plugin__cancel-action-button {
   overflow-y: auto;
 }
 
-.kanban-plugin__autocomplete li {
+.chatlike-plugin__autocomplete li {
   margin: 0;
   & em {
     opacity: 0.6;
   }
 }
 
-.kanban-plugin .textcomplete-footer,
-.kanban-plugin .textcomplete-header {
+.chatlike-plugin .textcomplete-footer,
+.chatlike-plugin .textcomplete-header {
   display: none;
 }
 
-.kanban-plugin__autocomplete-item-active,
-.kanban-plugin__autocomplete-item {
+.chatlike-plugin__autocomplete-item-active,
+.chatlike-plugin__autocomplete-item {
   border-top: 1px solid var(--background-modifier-border);
   padding: 4px 6px;
   cursor: var(--cursor);
 }
 
-.kanban-plugin__autocomplete
+.chatlike-plugin__autocomplete
   .textcomplete-header
-  + .kanban-plugin__autocomplete-item,
-.kanban-plugin__autocomplete
+  + .chatlike-plugin__autocomplete-item,
+.chatlike-plugin__autocomplete
   .textcomplete-header
-  + .kanban-plugin__autocomplete-item-active {
+  + .chatlike-plugin__autocomplete-item-active {
   border-top: none;
 }
 
-.kanban-plugin__autocomplete-item:hover,
-.kanban-plugin__autocomplete-item-active {
+.chatlike-plugin__autocomplete-item:hover,
+.chatlike-plugin__autocomplete-item-active {
   color: var(--text-on-accent);
   background-color: var(--interactive-accent-hover);
 }
 
-.kanban-plugin__file-suggestion-wrapper {
+.chatlike-plugin__file-suggestion-wrapper {
   display: flex;
   line-height: 1.2;
 }
 
-.kanban-plugin__file-suggestion-icon {
+.chatlike-plugin__file-suggestion-icon {
   flex-shrink: 0;
   flex-grow: 0;
   padding-right: 4px;
 }
 
-.kanban-plugin__file-suggestion-subtitle {
+.chatlike-plugin__file-suggestion-subtitle {
   font-size: 0.875em;
   color: var(--text-muted);
 }
 
-.kanban-plugin__autocomplete-item:hover
-  .kanban-plugin__file-suggestion-subtitle,
-.kanban-plugin__autocomplete-item-active
-  .kanban-plugin__file-suggestion-subtitle {
+.chatlike-plugin__autocomplete-item:hover
+  .chatlike-plugin__file-suggestion-subtitle,
+.chatlike-plugin__autocomplete-item-active
+  .chatlike-plugin__file-suggestion-subtitle {
   color: var(--text-on-accent);
 }
 
-.modal.kanban-plugin__board-settings-modal {
+.modal.chatlike-plugin__board-settings-modal {
   width: var(--modal-width);
   height: var(--modal-height);
   max-height: var(--modal-max-height);
@@ -933,7 +933,7 @@ button.kanban-plugin__cancel-action-button {
   flex-direction: column;
 }
 
-.modal.kanban-plugin__board-settings-modal .modal-content {
+.modal.chatlike-plugin__board-settings-modal .modal-content {
   padding: 30px 50px;
   height: 100%;
   overflow-y: auto;
@@ -941,28 +941,28 @@ button.kanban-plugin__cancel-action-button {
   margin: 0;
 }
 
-.kanban-plugin__board-settings-modal .setting-item {
+.chatlike-plugin__board-settings-modal .setting-item {
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.kanban-plugin__board-settings-modal .setting-item-info {
+.chatlike-plugin__board-settings-modal .setting-item-info {
   max-width: 400px;
   min-width: 300px;
   width: 50%;
 }
 
-.kanban-plugin__board-settings-modal .setting-item-control {
+.chatlike-plugin__board-settings-modal .setting-item-control {
   min-width: 300px;
   flex-shrink: 0;
 }
 
-.kanban-plugin__board-settings-modal .choices {
+.chatlike-plugin__board-settings-modal .choices {
   width: 100%;
   text-align: left;
 }
 
-.kanban-plugin__board-settings-modal
+.chatlike-plugin__board-settings-modal
   .choices[data-type*='select-one']
   .choices__inner {
   background-color: var(--background-primary);
@@ -971,7 +971,7 @@ button.kanban-plugin__cancel-action-button {
   min-height: 0;
 }
 
-.kanban-plugin__board-settings-modal
+.chatlike-plugin__board-settings-modal
   .choices[data-type*='select-one']
   .choices__input {
   background-color: var(--background-primary);
@@ -979,23 +979,23 @@ button.kanban-plugin__cancel-action-button {
   font-size: 14px;
 }
 
-.kanban-plugin__board-settings-modal .choices__input {
+.chatlike-plugin__board-settings-modal .choices__input {
   border-radius: 0;
   border-top: none;
   border-left: none;
   border-right: none;
 }
 
-.kanban-plugin__board-settings-modal .choices__list[role='listbox'] {
+.chatlike-plugin__board-settings-modal .choices__list[role='listbox'] {
   overflow-x: hidden;
 }
 
-.kanban-plugin__board-settings-modal .choices__list--single {
+.chatlike-plugin__board-settings-modal .choices__list--single {
   padding: 4px 20px 4px 6px;
 }
 
-.kanban-plugin__board-settings-modal .is-open .choices__list--dropdown,
-.kanban-plugin__board-settings-modal .choices__list--dropdown {
+.chatlike-plugin__board-settings-modal .is-open .choices__list--dropdown,
+.chatlike-plugin__board-settings-modal .choices__list--dropdown {
   background-color: var(--background-primary);
   border-color: var(--background-modifier-border);
   word-break: normal;
@@ -1004,41 +1004,41 @@ button.kanban-plugin__cancel-action-button {
   flex-direction: column;
 }
 
-.kanban-plugin__board-settings-modal
+.chatlike-plugin__board-settings-modal
   .choices__list--dropdown
   .choices__item--selectable:after {
   display: none;
 }
 
-.kanban-plugin__board-settings-modal
+.chatlike-plugin__board-settings-modal
   .choices__list--dropdown
   .choices__item--selectable {
   padding: 4px 6px;
 }
 
-.kanban-plugin__board-settings-modal
+.chatlike-plugin__board-settings-modal
   .choices__list--dropdown
   .choices__item.is-highlighted {
   background-color: var(--background-primary-alt);
 }
 
-.kanban-plugin__board-settings-modal .choices__placeholder {
+.chatlike-plugin__board-settings-modal .choices__placeholder {
   opacity: 1;
   color: var(--text-muted);
 }
 
-.kanban-plugin__board-settings-modal .error {
+.chatlike-plugin__board-settings-modal .error {
   border-color: var(--background-modifier-error-hover) !important;
 }
 
-.kanban-plugin__date-picker {
+.chatlike-plugin__date-picker {
   position: absolute;
   z-index: var(--layer-popover);
 
   --cell-size: 2.4em;
 }
 
-.kanban-plugin__date-picker .flatpickr-input {
+.chatlike-plugin__date-picker .flatpickr-input {
   width: 0;
   height: 0;
   opacity: 0;
@@ -1048,7 +1048,7 @@ button.kanban-plugin__cancel-action-button {
   margin-bottom: -1px;
 }
 
-.kanban-plugin__date-picker .flatpickr-current-month {
+.chatlike-plugin__date-picker .flatpickr-current-month {
   color: var(--text-normal);
   font-weight: 600;
   font-size: inherit;
@@ -1061,14 +1061,14 @@ button.kanban-plugin__cancel-action-button {
   padding: 0;
 }
 
-.kanban-plugin__date-picker
+.chatlike-plugin__date-picker
   .flatpickr-current-month
   .numInputWrapper
   span.arrowUp:after {
   border-bottom-color: var(--text-normal);
 }
 
-.kanban-plugin__date-picker
+.chatlike-plugin__date-picker
   .flatpickr-current-month
   .numInputWrapper
   span.arrowDown:after {
@@ -1080,7 +1080,7 @@ button.kanban-plugin__cancel-action-button {
   fill: currentColor;
 }
 
-.kanban-plugin__date-picker .flatpickr-calendar {
+.chatlike-plugin__date-picker .flatpickr-calendar {
   font-size: 13px;
   overflow: hidden;
   background-color: var(--background-primary);
@@ -1089,32 +1089,32 @@ button.kanban-plugin__cancel-action-button {
     0px 15px 25px rgba(0, 0, 0, 0.2);
 }
 
-.kanban-plugin__date-picker .flatpickr-months {
+.chatlike-plugin__date-picker .flatpickr-months {
   font-size: 13px;
   padding: 2px 2px 4px;
   align-items: center;
 }
 
-.kanban-plugin__date-picker
+.chatlike-plugin__date-picker
   .flatpickr-months
   .flatpickr-current-month
   input.cur-year,
-.kanban-plugin__date-picker .flatpickr-months select {
+.chatlike-plugin__date-picker .flatpickr-months select {
   border-radius: 4px;
   padding: 4px;
 }
 
-.kanban-plugin__date-picker .flatpickr-months .numInputWrapper {
+.chatlike-plugin__date-picker .flatpickr-months .numInputWrapper {
   border-radius: 4px;
 }
 
-.kanban-plugin__date-picker .flatpickr-months .flatpickr-month {
+.chatlike-plugin__date-picker .flatpickr-months .flatpickr-month {
   width: 100%;
   height: auto;
 }
 
-.kanban-plugin__date-picker .flatpickr-months .flatpickr-prev-month,
-.kanban-plugin__date-picker .flatpickr-months .flatpickr-next-month {
+.chatlike-plugin__date-picker .flatpickr-months .flatpickr-prev-month,
+.chatlike-plugin__date-picker .flatpickr-months .flatpickr-next-month {
   color: var(--text-normal);
   fill: currentColor;
   border-radius: 4px;
@@ -1128,18 +1128,18 @@ button.kanban-plugin__cancel-action-button {
   flex-shrink: 0;
 }
 
-.kanban-plugin__date-picker .flatpickr-months .flatpickr-prev-month:hover,
-.kanban-plugin__date-picker .flatpickr-months .flatpickr-next-month:hover {
+.chatlike-plugin__date-picker .flatpickr-months .flatpickr-prev-month:hover,
+.chatlike-plugin__date-picker .flatpickr-months .flatpickr-next-month:hover {
   background-color: var(--background-primary-alt);
   color: var(--text-normal);
 }
 
-.kanban-plugin__date-picker .flatpickr-months .flatpickr-prev-month:hover svg,
-.kanban-plugin__date-picker .flatpickr-months .flatpickr-next-month:hover svg {
+.chatlike-plugin__date-picker .flatpickr-months .flatpickr-prev-month:hover svg,
+.chatlike-plugin__date-picker .flatpickr-months .flatpickr-next-month:hover svg {
   fill: currentColor;
 }
 
-.kanban-plugin__date-picker
+.chatlike-plugin__date-picker
   .flatpickr-current-month
   .flatpickr-monthDropdown-months {
   color: var(--text-normal);
@@ -1147,26 +1147,26 @@ button.kanban-plugin__cancel-action-button {
   margin-right: 5px;
 }
 
-.kanban-plugin__date-picker .flatpickr-current-month input.cur-year {
+.chatlike-plugin__date-picker .flatpickr-current-month input.cur-year {
   color: var(--text-normal);
   font-weight: inherit;
 }
 
-.kanban-plugin__date-picker .flatpickr-weekdays {
+.chatlike-plugin__date-picker .flatpickr-weekdays {
   height: auto;
   padding: 8px 0 12px;
 }
 
-.kanban-plugin__date-picker span.flatpickr-weekday {
+.chatlike-plugin__date-picker span.flatpickr-weekday {
   font-weight: 400;
   color: var(--text-muted);
 }
 
-.kanban-plugin__date-picker .flatpickr-innerContainer {
+.chatlike-plugin__date-picker .flatpickr-innerContainer {
   padding: 4px;
 }
 
-.kanban-plugin__date-picker .flatpickr-day {
+.chatlike-plugin__date-picker .flatpickr-day {
   color: var(--text-normal);
   display: inline-flex;
   align-items: center;
@@ -1177,64 +1177,64 @@ button.kanban-plugin__cancel-action-button {
   border-radius: 6px;
 }
 
-.kanban-plugin__date-picker .flatpickr-day.today {
+.chatlike-plugin__date-picker .flatpickr-day.today {
   border-color: var(--interactive-accent);
 }
 
-.kanban-plugin__date-picker .flatpickr-day.today:hover {
+.chatlike-plugin__date-picker .flatpickr-day.today:hover {
   color: var(--text-normal);
   border-color: var(--interactive-accent);
   background-color: var(--background-primary-alt);
 }
 
-.kanban-plugin__date-picker .flatpickr-day.selected {
+.chatlike-plugin__date-picker .flatpickr-day.selected {
   border-color: var(--interactive-accent);
   background-color: var(--interactive-accent);
   color: var(--text-on-accent);
 }
 
-.kanban-plugin__date-picker .flatpickr-day.selected:hover {
+.chatlike-plugin__date-picker .flatpickr-day.selected:hover {
   border-color: var(--interactive-accent);
   background-color: var(--interactive-accent);
 }
 
-.kanban-plugin__date-picker .flatpickr-days {
+.chatlike-plugin__date-picker .flatpickr-days {
   width: calc(var(--cell-size) * 7);
 }
 
-.kanban-plugin__date-picker .dayContainer {
+.chatlike-plugin__date-picker .dayContainer {
   width: calc(var(--cell-size) * 7);
   min-width: calc(var(--cell-size) * 7);
   max-width: calc(var(--cell-size) * 7);
 }
 
-.kanban-plugin__date-picker .flatpickr-day.inRange,
-.kanban-plugin__date-picker .flatpickr-day.prevMonthDay.inRange,
-.kanban-plugin__date-picker .flatpickr-day.nextMonthDay.inRange,
-.kanban-plugin__date-picker .flatpickr-day.today.inRange,
-.kanban-plugin__date-picker .flatpickr-day.prevMonthDay.today.inRange,
-.kanban-plugin__date-picker .flatpickr-day.nextMonthDay.today.inRange,
-.kanban-plugin__date-picker .flatpickr-day:hover,
-.kanban-plugin__date-picker .flatpickr-day.prevMonthDay:hover,
-.kanban-plugin__date-picker .flatpickr-day.nextMonthDay:hover,
-.kanban-plugin__date-picker .flatpickr-day:focus,
-.kanban-plugin__date-picker .flatpickr-day.prevMonthDay:focus,
-.kanban-plugin__date-picker .flatpickr-day.nextMonthDay:focus {
+.chatlike-plugin__date-picker .flatpickr-day.inRange,
+.chatlike-plugin__date-picker .flatpickr-day.prevMonthDay.inRange,
+.chatlike-plugin__date-picker .flatpickr-day.nextMonthDay.inRange,
+.chatlike-plugin__date-picker .flatpickr-day.today.inRange,
+.chatlike-plugin__date-picker .flatpickr-day.prevMonthDay.today.inRange,
+.chatlike-plugin__date-picker .flatpickr-day.nextMonthDay.today.inRange,
+.chatlike-plugin__date-picker .flatpickr-day:hover,
+.chatlike-plugin__date-picker .flatpickr-day.prevMonthDay:hover,
+.chatlike-plugin__date-picker .flatpickr-day.nextMonthDay:hover,
+.chatlike-plugin__date-picker .flatpickr-day:focus,
+.chatlike-plugin__date-picker .flatpickr-day.prevMonthDay:focus,
+.chatlike-plugin__date-picker .flatpickr-day.nextMonthDay:focus {
   background-color: var(--background-primary-alt);
   border-color: var(--background-primary-alt);
 }
 
-.kanban-plugin__date-picker .flatpickr-day.flatpickr-disabled,
-.kanban-plugin__date-picker .flatpickr-day.flatpickr-disabled:hover,
-.kanban-plugin__date-picker .flatpickr-day.prevMonthDay,
-.kanban-plugin__date-picker .flatpickr-day.nextMonthDay,
-.kanban-plugin__date-picker .flatpickr-day.notAllowed,
-.kanban-plugin__date-picker .flatpickr-day.notAllowed.prevMonthDay,
-.kanban-plugin__date-picker .flatpickr-day.notAllowed.nextMonthDay {
+.chatlike-plugin__date-picker .flatpickr-day.flatpickr-disabled,
+.chatlike-plugin__date-picker .flatpickr-day.flatpickr-disabled:hover,
+.chatlike-plugin__date-picker .flatpickr-day.prevMonthDay,
+.chatlike-plugin__date-picker .flatpickr-day.nextMonthDay,
+.chatlike-plugin__date-picker .flatpickr-day.notAllowed,
+.chatlike-plugin__date-picker .flatpickr-day.notAllowed.prevMonthDay,
+.chatlike-plugin__date-picker .flatpickr-day.notAllowed.nextMonthDay {
   color: var(--text-faint);
 }
 
-.kanban-plugin__time-picker {
+.chatlike-plugin__time-picker {
   position: absolute;
   max-height: 250px;
   overflow: auto;
@@ -1247,7 +1247,7 @@ button.kanban-plugin__cancel-action-button {
   z-index: var(--layer-menu);
 }
 
-.kanban-plugin__time-picker-item {
+.chatlike-plugin__time-picker-item {
   display: flex;
   align-items: center;
   color: var(--text-muted);
@@ -1256,31 +1256,31 @@ button.kanban-plugin__cancel-action-button {
   padding: 6px 8px;
 }
 
-.kanban-plugin__time-picker-check {
+.chatlike-plugin__time-picker-check {
   visibility: hidden;
   display: inline-flex;
   margin-right: 5px;
 }
 
-.kanban-plugin__time-picker-item.is-hour {
+.chatlike-plugin__time-picker-item.is-hour {
   color: var(--text-normal);
   font-weight: 600;
 }
 
-.kanban-plugin__time-picker-item.is-selected .kanban-plugin__time-picker-check {
+.chatlike-plugin__time-picker-item.is-selected .chatlike-plugin__time-picker-check {
   visibility: visible;
 }
 
-.kanban-plugin__time-picker-item:hover,
-.kanban-plugin__time-picker-item.is-selected {
+.chatlike-plugin__time-picker-item:hover,
+.chatlike-plugin__time-picker-item.is-selected {
   background: var(--background-secondary);
 }
 
-.kanban-plugin mark {
+.chatlike-plugin mark {
   background-color: var(--text-highlight-bg);
 }
 
-.kanban-plugin__draggable-setting-container {
+.chatlike-plugin__draggable-setting-container {
   border-top: 0;
   padding: 0;
   flex-direction: column;
@@ -1290,15 +1290,15 @@ button.kanban-plugin__cancel-action-button {
   }
 }
 
-.kanban-plugin__setting-item-wrapper {
+.chatlike-plugin__setting-item-wrapper {
   border-top: 1px solid var(--background-modifier-border);
 }
 
-.kanban-plugin__draggable-setting-container > .kanban-plugin__placeholder {
+.chatlike-plugin__draggable-setting-container > .chatlike-plugin__placeholder {
   border-top: 1px solid var(--background-modifier-border);
 }
 
-.kanban-plugin__setting-item {
+.chatlike-plugin__setting-item {
   background-color: var(--background-secondary);
   width: 100%;
   font-size: 16px;
@@ -1308,18 +1308,18 @@ button.kanban-plugin__cancel-action-button {
   color: var(--text-muted);
 }
 
-.kanban-plugin__drag-container .kanban-plugin__setting-item {
+.chatlike-plugin__drag-container .chatlike-plugin__setting-item {
   border: 1px solid hsla(var(--interactive-accent-hsl), 0.8);
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2),
     0 0 0 2px hsla(var(--interactive-accent-hsl), 0.8);
 }
 
-.kanban-plugin__setting-controls-wrapper {
+.chatlike-plugin__setting-controls-wrapper {
   flex-grow: 1;
   flex-shrink: 1;
 }
 
-.kanban-plugin__setting-input-wrapper {
+.chatlike-plugin__setting-input-wrapper {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 1rem;
@@ -1329,7 +1329,7 @@ button.kanban-plugin__cancel-action-button {
   }
 }
 
-.kanban-plugin__setting-toggle-wrapper {
+.chatlike-plugin__setting-toggle-wrapper {
   > div {
     display: flex;
     align-items: center;
@@ -1341,7 +1341,7 @@ button.kanban-plugin__cancel-action-button {
   }
 }
 
-.kanban-plugin__setting-button-wrapper {
+.chatlike-plugin__setting-button-wrapper {
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
@@ -1352,70 +1352,70 @@ button.kanban-plugin__cancel-action-button {
   }
 }
 
-.kanban-plugin__setting-key-input-wrapper {
+.chatlike-plugin__setting-key-input-wrapper {
   margin: 1rem 0;
   > input {
     margin-right: 10px;
   }
 }
 
-.kanban-plugin__date-color-input-wrapper,
-.kanban-plugin__tag-color-input-wrapper {
+.chatlike-plugin__date-color-input-wrapper,
+.chatlike-plugin__tag-color-input-wrapper {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   gap: 1rem;
 }
 
-.kanban-plugin__add-tag-color-button {
+.chatlike-plugin__add-tag-color-button {
   align-self: baseline;
   margin: 0;
 }
 
-.kanban-plugin__date-color-wrapper,
-.kanban-plugin__tag-color-input .kanban-plugin__item-tags {
+.chatlike-plugin__date-color-wrapper,
+.chatlike-plugin__tag-color-input .chatlike-plugin__item-tags {
   background-color: var(--background-primary);
   padding: 10px;
   margin: 0;
   border-radius: 4px;
 }
 
-.kanban-plugin__tag-color-input .kanban-plugin__item-tag {
+.chatlike-plugin__tag-color-input .chatlike-plugin__item-tag {
   margin-top: 0;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.5;
 }
 
-.kanban-plugin__item-metadata
-  > .kanban-plugin__item-metadata-date-wrapper
+.chatlike-plugin__item-metadata
+  > .chatlike-plugin__item-metadata-date-wrapper
   .is-button:hover,
-.kanban-plugin__item-metadata > .kanban-plugin__item-metadata-date-wrapper {
+.chatlike-plugin__item-metadata > .chatlike-plugin__item-metadata-date-wrapper {
   display: inline-block;
   color: var(--date-color, var(--text-muted));
   line-height: 1;
 }
 
-.kanban-plugin__item-metadata
-  > .kanban-plugin__item-metadata-date-wrapper.has-background {
+.chatlike-plugin__item-metadata
+  > .chatlike-plugin__item-metadata-date-wrapper.has-background {
   background-color: var(--date-background-color, transparent);
   margin-top: 4px;
   border-radius: var(--tag-radius);
   padding: var(--tag-padding-y) var(--tag-padding-x);
 }
 
-.kanban-plugin__date-color-input-wrapper input[type='number'] {
+.chatlike-plugin__date-color-input-wrapper input[type='number'] {
   width: 75px;
   padding: 0.6em 0.8em;
   height: auto;
   border-radius: 0.5em;
 }
 
-.kanban-plugin__date-color-input-wrapper .kanban-plugin__setting-item-label {
+.chatlike-plugin__date-color-input-wrapper .chatlike-plugin__setting-item-label {
   margin-bottom: 0;
 }
 
-.kanban-plugin__date-color-config {
+.chatlike-plugin__date-color-config {
   padding: 0 0 10px;
   display: flex;
   flex-wrap: wrap;
@@ -1423,38 +1423,38 @@ button.kanban-plugin__cancel-action-button {
   align-items: center;
 }
 
-.kanban-plugin__date-color-wrapper {
+.chatlike-plugin__date-color-wrapper {
   display: inline-block;
   margin-top: 10px;
 }
 
-.kanban-plugin__date-color-wrapper .kanban-plugin__item-metadata {
+.chatlike-plugin__date-color-wrapper .chatlike-plugin__item-metadata {
   padding: 0;
 }
 
-.kanban-plugin__metadata-setting-desc {
+.chatlike-plugin__metadata-setting-desc {
   font-size: 14px;
 }
 
-.kanban-plugin__setting-button-spacer {
+.chatlike-plugin__setting-button-spacer {
   visibility: hidden;
 }
 
-.kanban-plugin__setting-item-label {
+.chatlike-plugin__setting-item-label {
   font-size: 12px;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.kanban-plugin__setting-toggle-wrapper .kanban-plugin__setting-item-label {
+.chatlike-plugin__setting-toggle-wrapper .chatlike-plugin__setting-item-label {
   margin-bottom: 0;
 }
 
-.kanban-plugin__hitbox {
+.chatlike-plugin__hitbox {
   border: 2px dashed tomato;
 }
 
-.kanban-plugin__placeholder {
+.chatlike-plugin__placeholder {
   flex-grow: 0;
   flex-shrink: 0;
   width: 0;
@@ -1462,42 +1462,42 @@ button.kanban-plugin__cancel-action-button {
   pointer-events: none;
 }
 
-.kanban-plugin__placeholder[data-axis='horizontal'] {
+.chatlike-plugin__placeholder[data-axis='horizontal'] {
   height: 100%;
 }
 
-.kanban-plugin__placeholder[data-axis='vertical'] {
+.chatlike-plugin__placeholder[data-axis='vertical'] {
   width: 100%;
 }
 
 body:not(.native-scrollbars)
-  .kanban-plugin__scroll-container::-webkit-scrollbar {
+  .chatlike-plugin__scroll-container::-webkit-scrollbar {
   background-color: transparent;
   width: 16px;
   height: 16px;
 }
 
 body:not(.native-scrollbars)
-  .kanban-plugin__scroll-container::-webkit-scrollbar-thumb {
+  .chatlike-plugin__scroll-container::-webkit-scrollbar-thumb {
   border: 4px solid transparent;
   background-clip: content-box;
 }
 
-.kanban-plugin__scroll-container {
+.chatlike-plugin__scroll-container {
   will-change: transform;
 }
 
-.kanban-plugin__scroll-container.kanban-plugin__horizontal {
+.chatlike-plugin__scroll-container.chatlike-plugin__horizontal {
   overflow-y: hidden;
   overflow-x: auto;
 }
 
-.kanban-plugin__scroll-container.kanban-plugin__vertical {
+.chatlike-plugin__scroll-container.chatlike-plugin__vertical {
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-.kanban-plugin__drag-container {
+.chatlike-plugin__drag-container {
   contain: layout size;
   z-index: 10000;
   pointer-events: none;
@@ -1506,7 +1506,7 @@ body:not(.native-scrollbars)
   left: 0;
 }
 
-.kanban-plugin__loading {
+.chatlike-plugin__loading {
   width: 100%;
   height: 100%;
   display: flex;
@@ -1532,11 +1532,11 @@ body:not(.native-scrollbars)
   }
 }
 
-.kanban-plugin__color-picker-wrapper {
+.chatlike-plugin__color-picker-wrapper {
   position: relative;
 }
 
-.kanban-plugin__color-picker {
+.chatlike-plugin__color-picker {
   position: absolute;
   top: -5px;
   left: 0;

@@ -56,7 +56,7 @@ export function hasFrontmatterKeyRaw(data: string) {
     return false;
   }
 
-  if (!match[1].contains('kanban-plugin')) {
+  if (!match[1].contains('chatlike-plugin')) {
     return false;
   }
 
@@ -68,7 +68,7 @@ export function hasFrontmatterKey(file: TFile) {
 
   const cache = app.metadataCache.getFileCache(file);
 
-  return !!cache?.frontmatter && !!cache?.frontmatter['kanban-plugin'];
+  return !!cache?.frontmatter && !!cache?.frontmatter['chatlike-plugin'];
 }
 
 export function laneTitleWithMaxItems(title: string, maxItems?: number) {

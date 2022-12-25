@@ -1,5 +1,5 @@
 ---
-kanban-plugin: basic
+chatlike-plugin: basic
 new-note-folder: How do I
 new-note-template: Assets/Base Template.md
 show-add-list: true
