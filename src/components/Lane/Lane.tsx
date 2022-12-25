@@ -152,6 +152,17 @@ export const DraggableLane = Preact.memo(function DraggableLane({
         ref={elementRef}
         className={classcat([c('lane'), { 'will-prepend': shouldPrepend }])}
       >
+          {/*
+        <LaneHeader
+          dragHandleRef={dragHandleRef}
+          laneIndex={laneIndex}
+          lane={lane}
+          setIsItemInputVisible={
+            isCompactPrepend ? setIsItemInputVisible : undefined
+          }
+        />
+           */}
+
 
         {shouldPrepend && (
           <ItemForm
