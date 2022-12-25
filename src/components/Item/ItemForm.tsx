@@ -110,6 +110,10 @@ export function ItemForm({
             onChange={(e) => {
               setItemTitle((e.target as HTMLTextAreaElement).value);
             }}
+            onArrowUp={(e) => {
+              // handleEditPreviousItem(e, stateManager, view.getWindow());
+                console.log('HUIHU')
+            }}
             onPaste={(e) => {
               handlePaste(e, stateManager, view.getWindow());
             }}

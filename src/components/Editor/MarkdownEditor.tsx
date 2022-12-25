@@ -40,7 +40,7 @@ export function allowNewLine(e: KeyboardEvent, stateManager: StateManager) {
 }
 
 export const MarkdownEditor = Preact.forwardRef(function MarkdownEditor(
-  { onEnter, onEscape, onSubmit, ...textareaProps }: MarkdownEditorProps,
+  { onEnter, onEscape, onSubmit, onArrowUp, ...textareaProps }: MarkdownEditorProps,
   ref: Ref<HTMLTextAreaElement>
 ) {
   const { view, stateManager } = Preact.useContext(KanbanContext);
@@ -67,6 +67,10 @@ export const MarkdownEditor = Preact.forwardRef(function MarkdownEditor(
         if (handledBrackets) return handledBrackets;
 
         return unpairMarkdown(e.target as HTMLTextAreaElement);
+      }
+
+      if (e.key === 'ArrowUp' && e.target.value == '') {
+        onArrowUp(e);
       }
 
       if (allowNewLine(e, stateManager)) {
