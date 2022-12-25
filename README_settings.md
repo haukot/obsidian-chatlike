@@ -1,0 +1,5 @@
+{
+  "hide-date-in-title": true,
+  "link-date-to-daily-note": true,
+  "date-format": "YYYY-MM-DDTHH:mm:ssZ"
+}

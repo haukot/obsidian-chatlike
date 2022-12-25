@@ -1,7 +1,9 @@
+import { moment } from 'obsidian';
 import Preact from 'preact/compat';
 import useOnclickOutside from 'react-cool-onclickoutside';
 
 import { t } from 'src/lang/helpers';
+import { buildLinkToDailyNote } from 'src/helpers';
 
 import { KanbanContext } from '../context';
 import { getDropAction, handlePaste } from '../Editor/helpers';
@@ -55,27 +57,38 @@ export function ItemForm({
     }
   };
 
-  const onEnter = (e: KeyboardEvent) => {
-    if (!allowNewLine(e, stateManager)) {
-      e.preventDefault();
+  const saveItem = () => {
+    let title = itemTitle.trim();
+    // добавляем текущую дату
+    const dateFormat = stateManager.getSetting('date-format');
+    const timeFormat = stateManager.getSetting('time-format');
+    const shouldLinkDates = stateManager.getSetting('link-date-to-daily-note');
+    const dateTrigger = stateManager.getSetting('date-trigger');
+    const timeTrigger = stateManager.getSetting('time-trigger');
 
-      const title = itemTitle.trim();
-
-      if (title) {
-        addItemsFromStrings([title]);
-        setItemTitle('');
-      }
-    }
-  };
-
-  const onSubmit = () => {
-    const title = itemTitle.trim();
-    // добавляем дату
+    const time = moment().format(timeFormat);
+    const formattedDate = moment().format(dateFormat);
+    const wrappedDate = shouldLinkDates
+      ? buildLinkToDailyNote(stateManager.app, formattedDate)
+      : `{${formattedDate}}`;
+    title = `${title} ${dateTrigger}${wrappedDate}`
 
     if (title) {
       addItemsFromStrings([title]);
       setItemTitle('');
     }
+  }
+
+  const onEnter = (e: KeyboardEvent) => {
+    if (!allowNewLine(e, stateManager)) {
+      e.preventDefault();
+
+      saveItem()
+    }
+  };
+
+  const onSubmit = () => {
+    saveItem()
   };
 
   if (isInputVisible) {

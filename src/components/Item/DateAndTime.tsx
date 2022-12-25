@@ -86,11 +86,12 @@ export function DateAndTime({
 
   if (!dateStr) return null;
 
-  const hasTime = !!item.data.metadata.time;
-  const dateDisplayStr = item.data.metadata.date.format(dateDisplayFormat);
+  const time = item.data.metadata.time || item.data.metadata.date;
+  const hasTime = !!time;
+  const dateDisplayStr = item.data.metadata.date.format('YYYY-MM-DD');
   const timeDisplayStr = !hasTime
     ? null
-    : item.data.metadata.time.format(timeFormat);
+    : time.format(timeFormat);
 
   const datePath = dateStr ? getLinkpath(dateStr) : null;
   const isResolved = dateStr
