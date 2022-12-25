@@ -96,6 +96,16 @@ export default class KanbanPlugin extends Plugin {
       })
     );
 
+    this.registerEvent(
+      app.workspace.on('active-leaf-change', (leaf: WorkspaceLeaf | null) => {
+        const view = leaf.view;
+
+        if (view && view instanceof KanbanView) {
+          view.emitter.emit('focusLastChatInput', undefined);
+        }
+      })
+    );
+
     this.settingsTab = new KanbanSettingsTab(this, {
       onSettingsChange: async (newSettings) => {
         this.settings = newSettings;

@@ -28,6 +28,10 @@ export function ItemForm({
   const { stateManager, view } = Preact.useContext(KanbanContext);
   const inputRef = Preact.useRef<HTMLTextAreaElement>();
 
+  Preact.useEffect(() => {
+    inputRef.current.focus()
+  }, []);
+
   const clickOutsideRef = useOnclickOutside(
     () => {
       // не хочу чтоб в кнопку превращалось

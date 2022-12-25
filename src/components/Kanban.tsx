@@ -96,12 +96,19 @@ export const Kanban = ({ view, stateManager }: KanbanProps) => {
       setIsLaneFormVisible(true);
     };
 
+    const focusLastChatInput = () => {
+        // TODO: поправить здесь чтобы выбирался инпут в нужной Lane.
+        view.contentEl.querySelector('.' + c('item-input')).focus();
+    };
+
     view.emitter.on('hotkey', onSearchHotkey);
     view.emitter.on('showLaneForm', showLaneForm);
+    view.emitter.on('focusLastChatInput', focusLastChatInput);
 
     return () => {
       view.emitter.off('hotkey', onSearchHotkey);
       view.emitter.off('showLaneForm', showLaneForm);
+      view.emitter.off('focusLastChatInput', focusLastChatInput);
     };
   }, [view]);
 

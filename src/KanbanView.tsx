@@ -27,6 +27,7 @@ export const kanbanIcon = 'lucide-trello';
 
 interface ViewEvents {
   showLaneForm: () => void;
+  focusLastChatInput: () => void;
   hotkey: (commandId: string) => void;
 }
 
