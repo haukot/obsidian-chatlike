@@ -389,7 +389,9 @@ button.chatlike-plugin__new-item-button {
   border-radius: var(--input-radius);
   overflow: hidden;
   transition: 300ms opacity cubic-bezier(0.25, 1, 0.5, 1);
-  flex: 1;
+  // flex: 1;
+  min-width: 490px;
+  max-width: 490px;
 
   &.is-search-hit {
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2),
@@ -408,6 +410,10 @@ button.chatlike-plugin__new-item-button {
 
 .chatlike-plugin__item-content-wrapper {
   background: var(--background-primary);
+}
+
+.chatlike-plugin__item-drag-handle {
+    align-self: stretch;
 }
 
 .chatlike-plugin__item-title-wrapper {
@@ -1503,7 +1509,7 @@ body:not(.native-scrollbars)
   pointer-events: none;
   position: fixed;
   top: 0;
-  left: 0;
+  left: -470px; // size of chatlike menu item
 }
 
 .chatlike-plugin__loading {

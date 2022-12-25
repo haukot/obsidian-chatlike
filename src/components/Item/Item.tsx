@@ -27,6 +27,7 @@ export interface ItemInnerProps {
   isStatic?: boolean;
   shouldMarkItemsComplete?: boolean;
   isMatch?: boolean;
+  measureRef: Preact.RefObject<HTMLElement | null>;
   searchQuery?: string;
 }
 
@@ -34,6 +35,7 @@ const ItemInner = Preact.memo(function ItemInner({
   item,
   shouldMarkItemsComplete,
   isMatch,
+  measureRef,
   searchQuery,
 }: ItemInnerProps) {
   const { stateManager, boardModifiers } = Preact.useContext(KanbanContext);
@@ -130,12 +132,15 @@ const ItemInner = Preact.memo(function ItemInner({
           searchQuery={isMatch ? searchQuery : undefined}
           setIsEditing={setIsEditing}
         />
+
+        <div ref={measureRef} className={c('item-drag-handle')}>
         <ItemMenuButton
           isEditing={isEditing}
           setIsEditing={setIsEditing}
           showMenu={showItemMenu}
-        />
-      </div>
+          />
+          </div>
+        </div>
       <ItemMetadata
         searchQuery={isMatch ? searchQuery : undefined}
         isSettingsVisible={isEditing}
@@ -172,7 +177,6 @@ export const DraggableItem = Preact.memo(function DraggableItem(
 
   return (
     <div className={c('item-wrapper')}>
-      <div ref={measureRef} className={c('item-drag-point')}>{/* || */}</div>
       <div
         ref={elementRef}
         className={classcat([c('item'), ...classModifiers])}
@@ -181,6 +185,7 @@ export const DraggableItem = Preact.memo(function DraggableItem(
           <ItemInner
             {...innerProps}
             isMatch={isMatch}
+            measureRef={measureRef}
             searchQuery={searchQuery}
           />
         ) : (
@@ -194,6 +199,7 @@ export const DraggableItem = Preact.memo(function DraggableItem(
             <ItemInner
               {...innerProps}
               isMatch={isMatch}
+              measureRef={measureRef}
               searchQuery={searchQuery}
             />
           </Droppable>
