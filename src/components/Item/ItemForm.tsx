@@ -75,7 +75,7 @@ export function ItemForm({
     const wrappedDate = shouldLinkDates
       ? buildLinkToDailyNote(stateManager.app, formattedDate)
       : `{${formattedDate}}`;
-    title = `${title} ${dateTrigger}${wrappedDate}`
+    title = `${dateTrigger}${wrappedDate}\n\n${title}`
 
     if (title) {
       addItemsFromStrings([title]);

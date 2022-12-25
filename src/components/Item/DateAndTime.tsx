@@ -5,7 +5,7 @@ import Preact from 'preact/compat';
 import { t } from 'src/lang/helpers';
 import { StateManager } from 'src/StateManager';
 
-import { c } from '../helpers';
+import { c, getDefaultDateFormat } from '../helpers';
 import { DateColorKey, Item } from '../types';
 
 export function getRelativeDate(date: moment.Moment, time: moment.Moment) {
@@ -82,7 +82,8 @@ export function DateAndTime({
 
   if (hideDateDisplay || !item.data.metadata.date) return null;
 
-  const dateStr = item.data.metadata.date.format(dateFormat);
+  // This is used to bind daily notes
+  const dateStr = item.data.metadata.date.format(getDefaultDateFormat(stateManager.app));
 
   if (!dateStr) return null;
 
