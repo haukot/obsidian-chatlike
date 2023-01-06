@@ -103,6 +103,10 @@ export const DraggableLane = Preact.memo(function DraggableLane({
     });
   };
 
+  const setEditLastItem = (e: KeyboardEvent) => {
+    boardModifiers.setEditLastItem(laneIndex);
+  }
+
   const laneContent = (
     <>
       <Items
@@ -166,6 +170,7 @@ export const DraggableLane = Preact.memo(function DraggableLane({
 
         {shouldPrepend && (
           <ItemForm
+            setEditLastItem={setEditLastItem}
             addItems={addItems}
             hideButton={isCompactPrepend}
             isInputVisible={isItemInputVisible}
@@ -190,6 +195,7 @@ export const DraggableLane = Preact.memo(function DraggableLane({
         {!shouldPrepend && (
           <ItemForm
             addItems={addItems}
+            setEditLastItem={setEditLastItem}
             isInputVisible={isItemInputVisible}
             setIsInputVisible={setIsItemInputVisible}
           />

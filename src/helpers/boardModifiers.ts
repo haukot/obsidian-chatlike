@@ -122,6 +122,30 @@ export function getBoardModifiers(stateManager: StateManager): BoardModifiers {
       });
     },
 
+    setEditLastItem: (laneIndex: number) => {
+      stateManager.setState((boardData) => {
+        const lane = boardData.children[laneIndex];
+        const path = [laneIndex, lane.children.length - 1];
+        const oldItem = getEntityFromPath(boardData, path);
+        const newItem = { ...oldItem, data: { ...oldItem.data, forceEditMode: true } };
+
+        stateManager.app.workspace.trigger(
+          'kanban:card-updated',
+          stateManager.file,
+          oldItem,
+          newItem
+        );
+
+        return updateParentEntity(boardData, path, {
+          children: {
+            [path[path.length - 1]]: {
+              $set: newItem,
+            },
+          },
+        });
+      });
+    },
+
     addLane: (lane: Lane) => {
       stateManager.app.workspace.trigger(
         'kanban:lane-added',

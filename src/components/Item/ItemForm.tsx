@@ -15,12 +15,14 @@ interface ItemFormProps {
   addItems: (items: Item[]) => void;
   isInputVisible: boolean;
   setIsInputVisible: Preact.StateUpdater<boolean>;
+  setEditLastItem: (e: KeyboardEvent) => void;
   hideButton?: boolean;
 }
 
 export function ItemForm({
   addItems,
   isInputVisible,
+  setEditLastItem,
   setIsInputVisible,
   hideButton,
 }: ItemFormProps) {
@@ -63,6 +65,8 @@ export function ItemForm({
 
   const saveItem = () => {
     let title = itemTitle.trim();
+
+    if (!title) return;
     // добавляем текущую дату
     const dateFormat = stateManager.getSetting('date-format');
     const timeFormat = stateManager.getSetting('time-format');
@@ -77,10 +81,8 @@ export function ItemForm({
       : `{${formattedDate}}`;
     title = `${dateTrigger}${wrappedDate}\n\n${title}`
 
-    if (title) {
-      addItemsFromStrings([title]);
-      setItemTitle('');
-    }
+    addItemsFromStrings([title]);
+    setItemTitle('');
   }
 
   const onEnter = (e: KeyboardEvent) => {
@@ -104,15 +106,13 @@ export function ItemForm({
             className={c('item-input')}
             placeholder={'Соблаговолите написать письмо..'}
             onEnter={onEnter}
-            onEscape={clear}
             onSubmit={onSubmit}
             value={itemTitle}
             onChange={(e) => {
               setItemTitle((e.target as HTMLTextAreaElement).value);
             }}
             onArrowUp={(e) => {
-              // handleEditPreviousItem(e, stateManager, view.getWindow());
-                console.log('HUIHU')
+              setEditLastItem(e);
             }}
             onPaste={(e) => {
               handlePaste(e, stateManager, view.getWindow());

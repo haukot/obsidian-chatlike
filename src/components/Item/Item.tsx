@@ -58,6 +58,8 @@ const ItemInner = Preact.memo(function ItemInner({
   Preact.useEffect(() => {
     if (item.data.forceEditMode) {
       setIsEditing(true);
+      // TODO: this is bad, but do we really should send update action here?
+      item.data.forceEditMode = false;
     }
   }, [item.data.forceEditMode]);
 

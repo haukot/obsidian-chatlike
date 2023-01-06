@@ -218,108 +218,108 @@ export function useItemMenu({
               .setTitle(t('Delete card'))
               .onClick(() => boardModifiers.deleteEntity(path));
           })
-          .addSeparator()
-          .addItem((i) => {
-            i.setIcon('lucide-calendar-check')
-              .setTitle(hasDate ? t('Edit date') : t('Add date'))
-              .onClick(() => {
-                constructDatePicker(
-                  e.view,
-                  stateManager,
-                  coordinates,
-                  constructMenuDatePickerOnChange({
-                    stateManager,
-                    boardModifiers,
-                    item,
-                    hasDate,
-                    path,
-                  }),
-                  item.data.metadata.date?.toDate()
-                );
-              });
-          });
+        //   .addSeparator()
+        //   .addItem((i) => {
+        //     i.setIcon('lucide-calendar-check')
+        //       .setTitle(hasDate ? t('Edit date') : t('Add date'))
+        //       .onClick(() => {
+        //         constructDatePicker(
+        //           e.view,
+        //           stateManager,
+        //           coordinates,
+        //           constructMenuDatePickerOnChange({
+        //             stateManager,
+        //             boardModifiers,
+        //             item,
+        //             hasDate,
+        //             path,
+        //           }),
+        //           item.data.metadata.date?.toDate()
+        //         );
+        //       });
+        //   });
 
-        if (hasDate) {
-          menu.addItem((i) => {
-            i.setIcon('lucide-x')
-              .setTitle(t('Remove date'))
-              .onClick(() => {
-                const shouldLinkDates = stateManager.getSetting(
-                  'link-date-to-daily-note'
-                );
-                const dateTrigger = stateManager.getSetting('date-trigger');
-                const contentMatch = shouldLinkDates
-                  ? '(?:\\[[^\\]]+\\]\\([^\\)]+\\)|\\[\\[[^\\]]+\\]\\])'
-                  : '{[^}]+}';
-                const dateRegEx = new RegExp(
-                  `(^|\\s)${escapeRegExpStr(
-                    dateTrigger as string
-                  )}${contentMatch}`
-                );
+        // if (hasDate) {
+        //   menu.addItem((i) => {
+        //     i.setIcon('lucide-x')
+        //       .setTitle(t('Remove date'))
+        //       .onClick(() => {
+        //         const shouldLinkDates = stateManager.getSetting(
+        //           'link-date-to-daily-note'
+        //         );
+        //         const dateTrigger = stateManager.getSetting('date-trigger');
+        //         const contentMatch = shouldLinkDates
+        //           ? '(?:\\[[^\\]]+\\]\\([^\\)]+\\)|\\[\\[[^\\]]+\\]\\])'
+        //           : '{[^}]+}';
+        //         const dateRegEx = new RegExp(
+        //           `(^|\\s)${escapeRegExpStr(
+        //             dateTrigger as string
+        //           )}${contentMatch}`
+        //         );
 
-                const titleRaw = item.data.titleRaw
-                  .replace(dateRegEx, '')
-                  .trim();
+        //         const titleRaw = item.data.titleRaw
+        //           .replace(dateRegEx, '')
+        //           .trim();
 
-                stateManager
-                  .updateItemContent(item, titleRaw)
-                  .then((item) => {
-                    boardModifiers.updateItem(path, item);
-                  })
-                  .catch((e) => {
-                    stateManager.setError(e);
-                    console.error(e);
-                  });
-              });
-          });
+        //         stateManager
+        //           .updateItemContent(item, titleRaw)
+        //           .then((item) => {
+        //             boardModifiers.updateItem(path, item);
+        //           })
+        //           .catch((e) => {
+        //             stateManager.setError(e);
+        //             console.error(e);
+        //           });
+        //       });
+        //   });
 
-          menu.addItem((i) => {
-            i.setIcon('lucide-clock')
-              .setTitle(hasTime ? t('Edit time') : t('Add time'))
-              .onClick(() => {
-                constructTimePicker(
-                  e.view,
-                  stateManager,
-                  coordinates,
-                  constructMenuTimePickerOnChange({
-                    stateManager,
-                    boardModifiers,
-                    item,
-                    hasTime,
-                    path,
-                  }),
-                  item.data.metadata.time
-                );
-              });
-          });
+        //   menu.addItem((i) => {
+        //     i.setIcon('lucide-clock')
+        //       .setTitle(hasTime ? t('Edit time') : t('Add time'))
+        //       .onClick(() => {
+        //         constructTimePicker(
+        //           e.view,
+        //           stateManager,
+        //           coordinates,
+        //           constructMenuTimePickerOnChange({
+        //             stateManager,
+        //             boardModifiers,
+        //             item,
+        //             hasTime,
+        //             path,
+        //           }),
+        //           item.data.metadata.time
+        //         );
+        //       });
+        //   });
 
-          if (hasTime) {
-            menu.addItem((i) => {
-              i.setIcon('lucide-x')
-                .setTitle(t('Remove time'))
-                .onClick(() => {
-                  const timeTrigger = stateManager.getSetting('time-trigger');
-                  const timeRegEx = new RegExp(
-                    `(^|\\s)${escapeRegExpStr(timeTrigger as string)}{([^}]+)}`
-                  );
+        //   if (hasTime) {
+        //     menu.addItem((i) => {
+        //       i.setIcon('lucide-x')
+        //         .setTitle(t('Remove time'))
+        //         .onClick(() => {
+        //           const timeTrigger = stateManager.getSetting('time-trigger');
+        //           const timeRegEx = new RegExp(
+        //             `(^|\\s)${escapeRegExpStr(timeTrigger as string)}{([^}]+)}`
+        //           );
 
-                  const titleRaw = item.data.titleRaw
-                    .replace(timeRegEx, '')
-                    .trim();
+        //           const titleRaw = item.data.titleRaw
+        //             .replace(timeRegEx, '')
+        //             .trim();
 
-                  stateManager
-                    .updateItemContent(item, titleRaw)
-                    .then((item) => {
-                      boardModifiers.updateItem(path, item);
-                    })
-                    .catch((e) => {
-                      stateManager.setError(e);
-                      console.error(e);
-                    });
-                });
-            });
-          }
-        }
+        //           stateManager
+        //             .updateItemContent(item, titleRaw)
+        //             .then((item) => {
+        //               boardModifiers.updateItem(path, item);
+        //             })
+        //             .catch((e) => {
+        //               stateManager.setError(e);
+        //               console.error(e);
+        //             });
+        //         });
+        //     });
+        //   }
+        // }
 
         menu.showAtPosition(coordinates);
       }
