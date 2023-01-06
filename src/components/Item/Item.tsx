@@ -19,6 +19,7 @@ export interface DraggableItemProps {
   item: Item;
   itemIndex: number;
   isStatic?: boolean;
+  onSave: () => void,
   shouldMarkItemsComplete?: boolean;
 }
 
@@ -27,6 +28,7 @@ export interface ItemInnerProps {
   isStatic?: boolean;
   shouldMarkItemsComplete?: boolean;
   isMatch?: boolean;
+  onSave: () => void,
   measureRef: Preact.RefObject<HTMLElement | null>;
   searchQuery?: string;
 }
@@ -36,6 +38,7 @@ const ItemInner = Preact.memo(function ItemInner({
   shouldMarkItemsComplete,
   isMatch,
   measureRef,
+  onSave,
   searchQuery,
 }: ItemInnerProps) {
   const { stateManager, boardModifiers } = Preact.useContext(KanbanContext);
@@ -132,6 +135,7 @@ const ItemInner = Preact.memo(function ItemInner({
           isEditing={isEditing}
           item={item}
           searchQuery={isMatch ? searchQuery : undefined}
+          onSave={onSave}
           setIsEditing={setIsEditing}
         />
 
@@ -214,12 +218,14 @@ export const DraggableItem = Preact.memo(function DraggableItem(
 interface ItemsProps {
   isStatic?: boolean;
   items: Item[];
+  onItemSave: (item: Item, index: i) => void,
   shouldMarkItemsComplete: boolean;
 }
 
 export const Items = Preact.memo(function Items({
   isStatic,
   items,
+  onItemSave,
   shouldMarkItemsComplete,
 }: ItemsProps) {
   return (
@@ -230,6 +236,7 @@ export const Items = Preact.memo(function Items({
             key={item.id}
             item={item}
             itemIndex={i}
+            onSave={() => onItemSave(item, i)}
             shouldMarkItemsComplete={shouldMarkItemsComplete}
             isStatic={isStatic}
           />

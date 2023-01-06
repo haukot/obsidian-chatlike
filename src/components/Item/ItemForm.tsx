@@ -16,6 +16,7 @@ interface ItemFormProps {
   isInputVisible: boolean;
   setIsInputVisible: Preact.StateUpdater<boolean>;
   setEditLastItem: (e: KeyboardEvent) => void;
+  hookFocus: (Function) => void;
   hideButton?: boolean;
 }
 
@@ -24,12 +25,14 @@ export function ItemForm({
   isInputVisible,
   setEditLastItem,
   setIsInputVisible,
+  hookFocus,
   hideButton,
 }: ItemFormProps) {
   const [itemTitle, setItemTitle] = Preact.useState('');
   const { stateManager, view } = Preact.useContext(KanbanContext);
   const inputRef = Preact.useRef<HTMLTextAreaElement>();
 
+  hookFocus(() => inputRef.current.focus());
   Preact.useEffect(() => {
     inputRef.current.focus()
   }, []);
@@ -93,6 +96,10 @@ export function ItemForm({
     }
   };
 
+  const onEscape = (e: KeyboardEvent) => {
+    inputRef.current.blur()
+  };
+
   const onSubmit = () => {
     saveItem()
   };
@@ -106,6 +113,7 @@ export function ItemForm({
             className={c('item-input')}
             placeholder={'Соблаговолите написать письмо..'}
             onEnter={onEnter}
+            onEscape={onEscape}
             onSubmit={onSubmit}
             value={itemTitle}
             onChange={(e) => {

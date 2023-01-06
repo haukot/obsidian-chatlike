@@ -65,6 +65,7 @@ export interface ItemContentProps {
   item: Item;
   isEditing: boolean;
   setIsEditing: Preact.StateUpdater<boolean>;
+  onSave: () => void,
   searchQuery?: string;
 }
 
@@ -123,6 +124,7 @@ export const ItemContent = Preact.memo(function ItemContent({
   item,
   isEditing,
   setIsEditing,
+  onSave,
   searchQuery,
 }: ItemContentProps) {
   const [editState, setEditState] = Preact.useState(item.data.titleRaw);
@@ -162,6 +164,7 @@ export const ItemContent = Preact.memo(function ItemContent({
           });
 
         setIsEditing(false);
+        onSave && onSave();
         return true;
       }
     },

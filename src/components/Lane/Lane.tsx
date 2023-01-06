@@ -103,6 +103,15 @@ export const DraggableLane = Preact.memo(function DraggableLane({
     });
   };
 
+  const onItemSave = () => {
+      focusItemFormFn();
+  }
+
+  let focusItemFormFn = () => {};
+  const hookItemFormFocus = (fn) => {
+    focusItemFormFn = fn;
+  }
+
   const setEditLastItem = (e: KeyboardEvent) => {
     boardModifiers.setEditLastItem(laneIndex);
   }
@@ -112,6 +121,7 @@ export const DraggableLane = Preact.memo(function DraggableLane({
       <Items
         items={lane.children}
         isStatic={isStatic}
+        onItemSave={onItemSave}
         shouldMarkItemsComplete={shouldMarkItemsComplete}
       />
       <SortPlaceholder
@@ -168,6 +178,7 @@ export const DraggableLane = Preact.memo(function DraggableLane({
            */}
 
 
+      {/*
         {shouldPrepend && (
           <ItemForm
             setEditLastItem={setEditLastItem}
@@ -177,6 +188,7 @@ export const DraggableLane = Preact.memo(function DraggableLane({
             setIsInputVisible={setIsItemInputVisible}
           />
         )}
+       */}
 
         {isStatic ? (
           laneBody
@@ -195,6 +207,7 @@ export const DraggableLane = Preact.memo(function DraggableLane({
         {!shouldPrepend && (
           <ItemForm
             addItems={addItems}
+            hookFocus={hookItemFormFocus}
             setEditLastItem={setEditLastItem}
             isInputVisible={isItemInputVisible}
             setIsInputVisible={setIsItemInputVisible}
