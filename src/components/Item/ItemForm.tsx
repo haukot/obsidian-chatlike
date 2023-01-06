@@ -32,7 +32,11 @@ export function ItemForm({
   const { stateManager, view } = Preact.useContext(KanbanContext);
   const inputRef = Preact.useRef<HTMLTextAreaElement>();
 
-  hookFocus(() => inputRef.current.focus());
+  Preact.useEffect(() => {
+      // () => () because first function react uses as initialization function and runs it
+      hookFocus(() => { return () => inputRef.current.focus() });
+  }, []);
+
   Preact.useEffect(() => {
     inputRef.current.focus()
   }, []);

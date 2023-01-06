@@ -27,6 +27,7 @@ export const kanbanIcon = 'lucide-trello';
 
 interface ViewEvents {
   showLaneForm: () => void;
+  toggleLaneHeaders: () => void;
   focusLastChatInput: () => void;
   hotkey: (commandId: string) => void;
 }
@@ -357,6 +358,16 @@ export class KanbanView extends TextFileView implements HoverParent {
       this.actionButtons['show-add-list'].remove();
       delete this.actionButtons['show-add-list'];
     }
+
+      if (!this.actionButtons['toggle-lane-headers']) {
+          this.actionButtons['toggle-lane-headers'] = this.addAction(
+              'lucide-list',
+              t('Toggle lane headers'),
+              () => {
+                  this.emitter.emit('toggleLaneHeaders', undefined);
+              }
+          );
+      }
   }
 
   clear() {

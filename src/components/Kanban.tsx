@@ -47,6 +47,8 @@ export const Kanban = ({ view, stateManager }: KanbanProps) => {
   const [debouncedSearchQuery, setDebouncedSearchQuery] =
     Preact.useState<string>('');
 
+  const [isLaneHeadersVisible, setIsLaneHeadersVisible] = Preact.useState<boolean>(false);
+
   const [isLaneFormVisible, setIsLaneFormVisible] = Preact.useState<boolean>(
     boardData?.children.length === 0
   );
@@ -85,6 +87,10 @@ export const Kanban = ({ view, stateManager }: KanbanProps) => {
     });
   }, []);
 
+    const toggleLaneHeaders = Preact.useCallback(() => {
+      setIsLaneHeadersVisible(!isLaneHeadersVisible);
+    }, [isLaneHeadersVisible]);
+
   Preact.useEffect(() => {
     const onSearchHotkey = (e: string) => {
       if (e === 'editor:open-search') {
@@ -101,6 +107,8 @@ export const Kanban = ({ view, stateManager }: KanbanProps) => {
         view.contentEl.querySelector('.' + c('item-input')).focus();
     };
 
+    view.emitter.on('toggleLaneHeaders', toggleLaneHeaders);
+
     view.emitter.on('hotkey', onSearchHotkey);
     view.emitter.on('showLaneForm', showLaneForm);
     view.emitter.on('focusLastChatInput', focusLastChatInput);
@@ -110,7 +118,7 @@ export const Kanban = ({ view, stateManager }: KanbanProps) => {
       view.emitter.off('showLaneForm', showLaneForm);
       view.emitter.off('focusLastChatInput', focusLastChatInput);
     };
-  }, [view]);
+  }, [view, toggleLaneHeaders]);
 
   Preact.useEffect(() => {
     if (isSearching) {
@@ -377,7 +385,7 @@ export const Kanban = ({ view, stateManager }: KanbanProps) => {
             >
               <div>
                 <Sortable axis="horizontal">
-                  <Lanes lanes={boardData.children} />
+                  <Lanes lanes={boardData.children} isLaneHeadersVisible={isLaneHeadersVisible} />
                   <SortPlaceholder
                     className={c('lane-placeholder')}
                     accepts={boardAccepts}

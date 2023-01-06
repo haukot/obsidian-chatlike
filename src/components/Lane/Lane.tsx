@@ -22,12 +22,14 @@ export interface DraggableLaneProps {
   lane: Lane;
   laneIndex: number;
   isStatic?: boolean;
+  isLaneHeadersVisible: boolean;
 }
 
 export const DraggableLane = Preact.memo(function DraggableLane({
   isStatic,
   lane,
   laneIndex,
+  isLaneHeadersVisible,
 }: DraggableLaneProps) {
   const { stateManager, boardModifiers, view } =
     Preact.useContext(KanbanContext);
@@ -103,14 +105,12 @@ export const DraggableLane = Preact.memo(function DraggableLane({
     });
   };
 
-  const onItemSave = () => {
-      focusItemFormFn();
-  }
+  // () => () because first function react uses as initialization function and runs it
+  const [focusItemFormFn, setFocusItemFormFn] = Preact.useState(() => () => {});
+  const onItemSave = Preact.useCallback(() => {
+    focusItemFormFn && focusItemFormFn();
+  }, [focusItemFormFn]);
 
-  let focusItemFormFn = () => {};
-  const hookItemFormFocus = (fn) => {
-    focusItemFormFn = fn;
-  }
 
   const setEditLastItem = (e: KeyboardEvent) => {
     boardModifiers.setEditLastItem(laneIndex);
@@ -166,7 +166,7 @@ export const DraggableLane = Preact.memo(function DraggableLane({
         ref={elementRef}
         className={classcat([c('lane'), { 'will-prepend': shouldPrepend }])}
       >
-          {/*
+      { isLaneHeadersVisible &&
         <LaneHeader
           dragHandleRef={dragHandleRef}
           laneIndex={laneIndex}
@@ -175,7 +175,7 @@ export const DraggableLane = Preact.memo(function DraggableLane({
             isCompactPrepend ? setIsItemInputVisible : undefined
           }
         />
-           */}
+      }
 
 
       {/*
@@ -207,7 +207,7 @@ export const DraggableLane = Preact.memo(function DraggableLane({
         {!shouldPrepend && (
           <ItemForm
             addItems={addItems}
-            hookFocus={hookItemFormFocus}
+            hookFocus={setFocusItemFormFn}
             setEditLastItem={setEditLastItem}
             isInputVisible={isItemInputVisible}
             setIsInputVisible={setIsItemInputVisible}
@@ -220,13 +220,14 @@ export const DraggableLane = Preact.memo(function DraggableLane({
 
 export interface Lanes {
   lanes: Lane[];
+  isLaneHeadersVisible: boolean;
 }
 
-export const Lanes = Preact.memo(function Lanes({ lanes }: Lanes) {
+export const Lanes = Preact.memo(function Lanes({ lanes, isLaneHeadersVisible }: Lanes) {
   return (
     <>
       {lanes.map((lane, i) => {
-        return <DraggableLane lane={lane} laneIndex={i} key={lane.id} />;
+        return <DraggableLane lane={lane} laneIndex={i} key={lane.id} isLaneHeadersVisible={isLaneHeadersVisible} />;
       })}
     </>
   );
