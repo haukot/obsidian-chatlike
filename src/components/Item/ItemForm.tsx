@@ -34,7 +34,7 @@ export function ItemForm({
 
   Preact.useEffect(() => {
       // () => () because first function react uses as initialization function and runs it
-      hookFocus(() => { return () => inputRef.current.focus() });
+      hookFocus(() => () => inputRef.current.focus());
   }, []);
 
   Preact.useEffect(() => {
