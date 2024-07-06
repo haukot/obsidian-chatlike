@@ -1,20 +1,20 @@
 import { generateInstanceId } from 'src/components/helpers';
 
 import {
-  CoordinateShift,
-  Entity,
-  Path,
-  ScrollState,
-  Side,
-  initialScrollShift,
-  initialScrollState,
+    CoordinateShift,
+    Entity,
+    Path,
+    ScrollState,
+    Side,
+    initialScrollShift,
+    initialScrollState,
 } from '../types';
 import { getParentWindow } from '../util/getWindow';
 import {
-  adjustHitbox,
-  calculateScrollHitbox,
-  getElementScrollOffsets,
-  numberOrZero,
+    adjustHitbox,
+    calculateScrollHitbox,
+    getElementScrollOffsets,
+    numberOrZero,
 } from '../util/hitbox';
 import { DndManager } from './DndManager';
 import { ScrollEventData } from './DragManager';

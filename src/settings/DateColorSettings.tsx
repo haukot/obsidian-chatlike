@@ -1,18 +1,18 @@
 import update from 'immutability-helper';
-import Preact from 'preact/compat';
 import { moment } from 'obsidian';
+import Preact from 'preact/compat';
 
+import classcat from 'classcat';
 import { c, generateInstanceId } from '../components/helpers';
 import { Icon } from '../components/Icon/Icon';
 import {
-  DateColorKey,
-  DateColorSetting,
-  DateColorSettingTemplate,
+    DateColorKey,
+    DateColorSetting,
+    DateColorSettingTemplate,
 } from '../components/types';
 import { getParentBodyElement } from '../dnd/util/getWindow';
 import { t } from '../lang/helpers';
 import { ColorPickerInput } from './TagColorSettings';
-import classcat from 'classcat';
 
 interface ItemProps {
   dateColorKey: DateColorKey;

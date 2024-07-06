@@ -1,7 +1,7 @@
 import { factorySpace } from 'micromark-factory-space';
 import {
-  markdownLineEndingOrSpace,
-  markdownSpace,
+    markdownLineEndingOrSpace,
+    markdownSpace,
 } from 'micromark-util-character';
 import { codes } from 'micromark-util-symbol/codes.js';
 import { types } from 'micromark-util-symbol/types.js';

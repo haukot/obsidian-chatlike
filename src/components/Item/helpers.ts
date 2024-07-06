@@ -1,13 +1,13 @@
 import { FileWithPath, fromEvent } from 'file-selector';
 import {
-  MarkdownSourceView,
-  Platform,
-  TFile,
-  TFolder,
-  htmlToMarkdown,
-  moment,
-  parseLinktext,
-  setIcon,
+    htmlToMarkdown,
+    MarkdownSourceView,
+    moment,
+    parseLinktext,
+    Platform,
+    setIcon,
+    TFile,
+    TFolder,
 } from 'obsidian';
 
 import { Path } from 'src/dnd/types';

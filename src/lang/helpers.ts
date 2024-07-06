@@ -18,8 +18,7 @@ import ptBR from './locale/pt-br';
 import ro from './locale/ro';
 import ru from './locale/ru';
 import sq from './locale/sq';
-import tr from './locale/tr';
-import uk from './locale/tr';
+import { default as tr, default as uk } from './locale/tr';
 import zhCN from './locale/zh-cn';
 import zhTW from './locale/zh-tw';
 

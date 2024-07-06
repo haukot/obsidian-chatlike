@@ -3577,7 +3577,7 @@ class CSSSettingsManager {
         new ExportModal(this.plugin.app, this.plugin, section, config).open();
     }
     import() {
-        new ImportModal(this.plugin.app, this.plugin).open();
+        new importModal(this.plugin.app, this.plugin).open();
     }
 }
 class ExportModal extends obsidian.Modal {
@@ -3635,7 +3635,7 @@ class ExportModal extends obsidian.Modal {
         contentEl.empty();
     }
 }
-class ImportModal extends obsidian.Modal {
+class importModal extends obsidian.Modal {
     constructor(app, plugin) {
         super(app);
         this.plugin = plugin;
@@ -3644,8 +3644,8 @@ class ImportModal extends obsidian.Modal {
         let { contentEl, modalEl } = this;
         modalEl.addClass("modal-style-settings");
         new obsidian.Setting(contentEl)
-            .setName("Import style setting")
-            .setDesc("Import an entire or partial configuration. Warning: this may override existing settings");
+            .setName("import style setting")
+            .setDesc("import an entire or partial configuration. Warning: this may override existing settings");
         new obsidian.Setting(contentEl).then((setting) => {
             // Build an error message container
             const errorSpan = createSpan({
@@ -3694,7 +3694,7 @@ class ImportModal extends obsidian.Modal {
             // Build a label we will style as a link
             setting.controlEl.createEl("label", {
                 cls: "style-settings-import-label",
-                text: "Import from file",
+                text: "import from file",
                 attr: {
                     for: "style-settings-import-input",
                 },
@@ -7630,7 +7630,7 @@ function chooseScalarStyle(string, singleLineOnly, indentPerLevel, lineWidth,
 //  since the dumper adds its own newline. This always works:
 //    • No ending newline => unaffected; already using strip "-" chomping.
 //    • Ending newline    => removed then restored.
-//  Importantly, this keeps the "+" chomp indicator from gaining an extra line.
+//  importantly, this keeps the "+" chomp indicator from gaining an extra line.
 function writeScalar(state, string, level, iskey, inblock) {
   state.dump = (function () {
     if (string.length === 0) {
@@ -8511,7 +8511,7 @@ class CSSSettingsTab extends obsidian.PluginSettingTab {
             // Build and import link to open the import modal
             setting.controlEl.createEl("a", {
                 cls: "style-settings-import",
-                text: "Import",
+                text: "import",
                 href: "#",
             }, (el) => {
                 el.addEventListener("click", (e) => {

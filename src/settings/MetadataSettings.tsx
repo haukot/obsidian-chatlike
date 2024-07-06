@@ -2,16 +2,16 @@ import update from 'immutability-helper';
 import Preact from 'preact/compat';
 
 import {
-  c,
-  generateInstanceId,
-  noop,
-  useIMEInputProps,
+    c,
+    generateInstanceId,
+    noop,
+    useIMEInputProps,
 } from '../components/helpers';
 import { Icon } from '../components/Icon/Icon';
 import {
-  DataTypes,
-  MetadataSetting,
-  MetadataSettingTemplate,
+    DataTypes,
+    MetadataSetting,
+    MetadataSettingTemplate,
 } from '../components/types';
 import { DndManagerContext } from '../dnd/components/context';
 import { DndContext } from '../dnd/components/DndContext';

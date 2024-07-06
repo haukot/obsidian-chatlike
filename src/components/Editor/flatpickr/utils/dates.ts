@@ -2,11 +2,11 @@ import { english } from '../l10n/default';
 import { Locale } from '../types/locale';
 import { ParsedOptions, defaults } from '../types/options';
 import {
-  RevFormatFn,
-  formats,
-  revFormat,
-  token,
-  tokenRegex,
+    RevFormatFn,
+    formats,
+    revFormat,
+    token,
+    tokenRegex,
 } from './formatting';
 
 export interface FormatterArgs {

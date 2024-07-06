@@ -1,10 +1,10 @@
 import {
-  CoordinateShift,
-  Coordinates,
-  Entity,
-  Hitbox,
-  ScrollState,
-  Side,
+    CoordinateShift,
+    Coordinates,
+    Entity,
+    Hitbox,
+    ScrollState,
+    Side,
 } from '../types';
 
 export const emptyDomRect: DOMRectReadOnly = {

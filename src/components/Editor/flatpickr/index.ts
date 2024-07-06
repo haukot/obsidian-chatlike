@@ -1,9 +1,9 @@
 import English from './l10n/default';
 import {
-  FPDate,
-  FPHTMLCollection,
-  FPHTMLElement,
-  FPNodeList,
+    FPDate,
+    FPHTMLCollection,
+    FPHTMLElement,
+    FPNodeList,
 } from './types/globals';
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-empty */
@@ -11,34 +11,34 @@ import {
 import { DayElement, FlatpickrFn, Instance } from './types/instance';
 import { CustomLocale, Locale, key as LocaleKey } from './types/locale';
 import {
-  DateLimit,
-  DateOption,
-  DateRangeLimit,
-  HOOKS,
-  Hook,
-  HookKey,
-  Options,
-  ParsedOptions,
-  defaults as defaultOptions,
+    DateLimit,
+    DateOption,
+    DateRangeLimit,
+    HOOKS,
+    Hook,
+    HookKey,
+    Options,
+    ParsedOptions,
+    defaults as defaultOptions,
 } from './types/options';
 import { IncrementEvent, arrayify, debounce, int, pad } from './utils';
 import {
-  calculateSecondsSinceMidnight,
-  compareDates,
-  createDateFormatter,
-  createDateParser,
-  duration,
-  getDefaultHours,
-  isBetween,
-  parseSeconds,
+    calculateSecondsSinceMidnight,
+    compareDates,
+    createDateFormatter,
+    createDateParser,
+    duration,
+    getDefaultHours,
+    isBetween,
+    parseSeconds,
 } from './utils/dates';
 import {
-  clearNode,
-  createElement,
-  createNumberInput,
-  findParent,
-  getEventTarget,
-  toggleClass,
+    clearNode,
+    createElement,
+    createNumberInput,
+    findParent,
+    getEventTarget,
+    toggleClass,
 } from './utils/dom';
 import { monthToStr, tokenRegex } from './utils/formatting';
 

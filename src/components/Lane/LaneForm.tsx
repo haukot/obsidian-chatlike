@@ -4,8 +4,8 @@ import useOnclickOutside from 'react-cool-onclickoutside';
 import { t } from 'src/lang/helpers';
 import { parseLaneTitle } from 'src/parsers/helpers/parser';
 
-import { KanbanContext } from '../context';
 import { MarkdownEditor, allowNewLine } from '../Editor/MarkdownEditor';
+import { KanbanContext } from '../context';
 import { c, generateInstanceId } from '../helpers';
 import { LaneTemplate } from '../types';
 

@@ -16,14 +16,14 @@ import {
 } from 'obsidian';
 import Preact from 'preact/compat';
 
-import { getParentWindow } from './dnd/util/getWindow';
 import { createApp } from './DragDropApp';
-import { hasFrontmatterKey } from './helpers';
 import { KanbanView, kanbanIcon, kanbanViewType } from './KanbanView';
-import { t } from './lang/helpers';
-import { basicFrontmatter, frontMatterKey } from './parsers/common';
 import { KanbanSettings, KanbanSettingsTab } from './Settings';
 import { StateManager } from './StateManager';
+import { getParentWindow } from './dnd/util/getWindow';
+import { hasFrontmatterKey } from './helpers';
+import { t } from './lang/helpers';
+import { basicFrontmatter, frontMatterKey } from './parsers/common';
 
 interface WindowRegistry {
   viewMap: Map<string, KanbanView>;

@@ -1,11 +1,11 @@
 import { generateInstanceId } from 'src/components/helpers';
 
 import {
-  Entity,
-  EntityData,
-  Path,
-  initialScrollShift,
-  initialScrollState,
+    Entity,
+    EntityData,
+    Path,
+    initialScrollShift,
+    initialScrollState,
 } from '../types';
 import { getParentWindow } from '../util/getWindow';
 import { adjustHitbox, calculateHitbox, emptyDomRect } from '../util/hitbox';

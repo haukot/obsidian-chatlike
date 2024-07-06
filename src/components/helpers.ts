@@ -2,9 +2,9 @@ import update from 'immutability-helper';
 import { App, MarkdownView, TFile, moment } from 'obsidian';
 import Preact from 'preact/compat';
 
+import { StateManager } from 'src/StateManager';
 import { Path } from 'src/dnd/types';
 import { getEntityFromPath } from 'src/dnd/util/data';
-import { StateManager } from 'src/StateManager';
 
 import { Board, DateColorKey, Item, TagColorKey } from './types';
 

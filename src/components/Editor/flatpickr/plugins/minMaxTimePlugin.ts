@@ -1,11 +1,11 @@
 import { Instance } from '../types/instance';
 import { Plugin } from '../types/options';
 import {
-  calculateSecondsSinceMidnight,
-  compareDates,
-  compareTimes,
-  createDateFormatter,
-  parseSeconds,
+    calculateSecondsSinceMidnight,
+    compareDates,
+    compareTimes,
+    createDateFormatter,
+    parseSeconds,
 } from '../utils/dates';
 
 export interface MinMaxTime {

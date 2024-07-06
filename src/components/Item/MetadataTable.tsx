@@ -4,9 +4,9 @@ import Preact from 'preact/compat';
 import { KanbanView } from 'src/KanbanView';
 import { StateManager } from 'src/StateManager';
 
+import { MarkdownRenderer } from '../MarkdownRenderer';
 import { KanbanContext } from '../context';
 import { c } from '../helpers';
-import { MarkdownRenderer } from '../MarkdownRenderer';
 import { Item, PageData } from '../types';
 
 export interface ItemMetadataProps {

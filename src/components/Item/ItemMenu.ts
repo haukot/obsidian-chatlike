@@ -1,19 +1,13 @@
 import { Menu, TFile, TFolder, getLinkpath } from 'obsidian';
 import Preact from 'preact/compat';
 
+import { StateManager } from 'src/StateManager';
 import { Path } from 'src/dnd/types';
 import { t } from 'src/lang/helpers';
-import { StateManager } from 'src/StateManager';
 
 import { BoardModifiers } from '../../helpers/boardModifiers';
-import { applyTemplate, escapeRegExpStr, generateInstanceId } from '../helpers';
+import { applyTemplate, generateInstanceId } from '../helpers';
 import { Item } from '../types';
-import {
-  constructDatePicker,
-  constructMenuDatePickerOnChange,
-  constructMenuTimePickerOnChange,
-  constructTimePicker,
-} from './helpers';
 
 const illegalCharsRegEx = /[\\/:"*?<>|]+/g;
 const embedRegEx = /!?\[\[([^\]]*)\.[^\]]+\]\]/g;

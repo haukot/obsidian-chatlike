@@ -1,7 +1,7 @@
 import { App, TFile } from 'obsidian';
 import {
-  getDailyNoteSettings,
-  getDateFromFile,
+    getDailyNoteSettings,
+    getDateFromFile,
 } from 'obsidian-daily-notes-interface';
 
 export function gotoNextDailyNote(app: App, file: TFile) {

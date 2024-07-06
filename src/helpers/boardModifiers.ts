@@ -1,5 +1,4 @@
 import update from 'immutability-helper';
-import { moment } from 'obsidian';
 
 import { Path } from 'src/dnd/types';
 import {
@@ -9,8 +8,7 @@ import {
   moveEntity,
   prependEntities,
   removeEntity,
-  updateEntity,
-  updateParentEntity,
+  updateParentEntity
 } from 'src/dnd/util/data';
 import { StateManager } from 'src/StateManager';
 

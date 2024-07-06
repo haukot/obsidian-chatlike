@@ -1,11 +1,11 @@
 import {
-  applyWrappingFormatting,
-  expandSelectionToLineBoundaries,
-  getStateFromTextarea,
-  replaceSelection,
-  setSelectionRange,
-  toggleLineFormatting,
-  toggleWrappingFormattingCommand,
+    applyWrappingFormatting,
+    expandSelectionToLineBoundaries,
+    getStateFromTextarea,
+    replaceSelection,
+    setSelectionRange,
+    toggleLineFormatting,
+    toggleWrappingFormattingCommand,
 } from './helpers';
 import { insertTextAtCursor } from './insertTextAtCursor';
 

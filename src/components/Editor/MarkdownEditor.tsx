@@ -9,13 +9,13 @@ import { KanbanContext } from '../context';
 import { c } from '../helpers';
 import { useAutocompleteInputProps } from './autocomplete';
 import {
-  autoPairBracketsCommands,
-  autoPairMarkdownCommands,
-  commands,
-  handleNewLine,
-  handleTab,
-  unpairBrackets,
-  unpairMarkdown,
+    autoPairBracketsCommands,
+    autoPairMarkdownCommands,
+    commands,
+    handleNewLine,
+    handleTab,
+    unpairBrackets,
+    unpairMarkdown,
 } from './commands';
 
 interface MarkdownEditorProps

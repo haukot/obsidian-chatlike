@@ -1,16 +1,16 @@
 import { compare } from 'fast-json-patch';
 import { JSONPatchDocument, immutableJSONPatch } from 'immutable-json-patch';
 
-import { Board, Item } from 'src/components/types';
 import { StateManager } from 'src/StateManager';
+import { Board, Item } from 'src/components/types';
 
 import { BaseFormat } from './common';
 import {
-  astToUnhydratedBoard,
-  boardToMd,
-  newItem,
-  reparseBoard,
-  updateItemContent,
+    astToUnhydratedBoard,
+    boardToMd,
+    newItem,
+    reparseBoard,
+    updateItemContent,
 } from './formats/list';
 import { hydrateBoard, hydratePostOp } from './helpers/hydrateBoard';
 import { parseMarkdown } from './parseMarkdown';

@@ -1,19 +1,18 @@
-import { FlatpickrFn } from './types/instance';
-import { Instance as _Instance } from './types/instance';
+import { FlatpickrFn, Instance as _Instance } from './types/instance';
 import {
-  CustomLocale as _CustomLocale,
-  Locale as _Locale,
-  key as _LocaleKey,
+    CustomLocale as _CustomLocale,
+    Locale as _Locale,
+    key as _LocaleKey,
 } from './types/locale';
 import {
-  DateLimit as _DateLimit,
-  DateOption as _DateOption,
-  DateRangeLimit as _DateRangeLimit,
-  Hook as _Hook,
-  HookKey as _HookKey,
-  Options as _Options,
-  ParsedOptions as _ParsedOptions,
-  Plugin as _Plugin,
+    DateLimit as _DateLimit,
+    DateOption as _DateOption,
+    DateRangeLimit as _DateRangeLimit,
+    Hook as _Hook,
+    HookKey as _HookKey,
+    Options as _Options,
+    ParsedOptions as _ParsedOptions,
+    Plugin as _Plugin,
 } from './types/options';
 
 declare const flatpickr: FlatpickrFn;

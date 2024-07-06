@@ -8,8 +8,9 @@ import {
   WorkspaceLeaf,
 } from 'obsidian';
 
-import { c } from './components/helpers';
+import { SettingsModal } from './Settings';
 import { Kanban } from './components/Kanban';
+import { c } from './components/helpers';
 import { Board } from './components/types';
 import { Emitter, createEmitter } from './dnd/util/emitter';
 import { getParentWindow } from './dnd/util/getWindow';
@@ -20,7 +21,6 @@ import {
 } from './helpers';
 import { t } from './lang/helpers';
 import KanbanPlugin from './main';
-import { SettingsModal } from './Settings';
 
 export const kanbanViewType = 'kanban';
 export const kanbanIcon = 'lucide-trello';

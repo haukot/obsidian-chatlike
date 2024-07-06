@@ -1,6 +1,5 @@
 import animateScrollTo from 'animated-scroll-to';
 import classcat from 'classcat';
-import update from 'immutability-helper';
 import { TFile, moment } from 'obsidian';
 import {
   appHasDailyNotesPluginLoaded,
@@ -8,24 +7,24 @@ import {
 } from 'obsidian-daily-notes-interface';
 import Preact from 'preact/compat';
 
+import { KanbanView } from 'src/KanbanView';
+import { StateManager } from 'src/StateManager';
 import { useIsAnythingDragging } from 'src/dnd/components/DragOverlay';
 import { ScrollContainer } from 'src/dnd/components/ScrollContainer';
-import { Sortable } from 'src/dnd/components/Sortable';
 import { SortPlaceholder } from 'src/dnd/components/SortPlaceholder';
+import { Sortable } from 'src/dnd/components/Sortable';
 import { createHTMLDndHandlers } from 'src/dnd/managers/DragManager';
 import { getNormalizedPath } from 'src/helpers/renderMarkdown';
-import { KanbanView } from 'src/KanbanView';
 import { t } from 'src/lang/helpers';
-import { StateManager } from 'src/StateManager';
 
 import { DndScope } from '../dnd/components/Scope';
 import { getBoardModifiers } from '../helpers/boardModifiers';
 import { frontMatterKey } from '../parsers/common';
-import { KanbanContext, SearchContext } from './context';
-import { baseClassName, c, getDateColorFn, getTagColorFn } from './helpers';
 import { Icon } from './Icon/Icon';
 import { Lanes } from './Lane/Lane';
 import { LaneForm } from './Lane/LaneForm';
+import { KanbanContext, SearchContext } from './context';
+import { baseClassName, c, getDateColorFn, getTagColorFn } from './helpers';
 import { DataTypes } from './types';
 
 const boardScrollTiggers = [DataTypes.Item, DataTypes.Lane];

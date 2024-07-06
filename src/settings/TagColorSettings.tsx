@@ -7,9 +7,9 @@ import useOnclickOutside from 'react-cool-onclickoutside';
 import { c, generateInstanceId } from '../components/helpers';
 import { Icon } from '../components/Icon/Icon';
 import {
-  TagColorKey,
-  TagColorSetting,
-  TagColorSettingTemplate,
+    TagColorKey,
+    TagColorSetting,
+    TagColorSettingTemplate,
 } from '../components/types';
 import { getParentBodyElement } from '../dnd/util/getWindow';
 import { t } from '../lang/helpers';

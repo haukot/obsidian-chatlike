@@ -3,18 +3,18 @@ import Preact from 'preact/compat';
 
 import { useNestedEntityPath } from 'src/dnd/components/Droppable';
 
-import { KanbanContext } from '../context';
-import { handlePaste } from '../Editor/helpers';
 import { MarkdownEditor, allowNewLine } from '../Editor/MarkdownEditor';
-import { c } from '../helpers';
+import { handlePaste } from '../Editor/helpers';
 import { MarkdownDomRenderer } from '../MarkdownRenderer';
+import { KanbanContext } from '../context';
+import { c } from '../helpers';
 import { Item } from '../types';
 import { DateAndTime, RelativeDate } from './DateAndTime';
 import {
-  constructDatePicker,
-  constructMenuDatePickerOnChange,
-  constructMenuTimePickerOnChange,
-  constructTimePicker,
+    constructDatePicker,
+    constructMenuDatePickerOnChange,
+    constructMenuTimePickerOnChange,
+    constructTimePicker,
 } from './helpers';
 
 function useDatePickers(item: Item) {

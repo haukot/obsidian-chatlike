@@ -2,12 +2,12 @@ import { moment } from 'obsidian';
 import Preact from 'preact/compat';
 import useOnclickOutside from 'react-cool-onclickoutside';
 
-import { t } from 'src/lang/helpers';
 import { buildLinkToDailyNote } from 'src/helpers';
+import { t } from 'src/lang/helpers';
 
 import { KanbanContext } from '../context';
 import { getDropAction, handlePaste } from '../Editor/helpers';
-import { MarkdownEditor, allowNewLine } from '../Editor/MarkdownEditor';
+import { allowNewLine, MarkdownEditor } from '../Editor/MarkdownEditor';
 import { c } from '../helpers';
 import { Item } from '../types';
 

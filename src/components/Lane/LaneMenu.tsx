@@ -1,5 +1,4 @@
-import update from 'immutability-helper';
-import { Menu, moment } from 'obsidian';
+import { Menu } from 'obsidian';
 import Preact from 'preact/compat';
 
 import { Path } from 'src/dnd/types';

@@ -7,6 +7,7 @@ import {
   ToggleComponent,
 } from 'obsidian';
 
+import { KanbanView } from './KanbanView';
 import {
   c,
   generateInstanceId,
@@ -25,7 +26,6 @@ import {
   TagColorSettingTemplate,
 } from './components/types';
 import { getParentWindow } from './dnd/util/getWindow';
-import { KanbanView } from './KanbanView';
 import { t } from './lang/helpers';
 import KanbanPlugin from './main';
 import { frontMatterKey } from './parsers/common';
@@ -36,6 +36,10 @@ import {
   getListOptions,
 } from './settingHelpers';
 import {
+  cleanUpDateSettings,
+  renderDateSettings,
+} from './settings/DateColorSettings';
+import {
   cleanupMetadataSettings,
   renderMetadataSettings,
 } from './settings/MetadataSettings';
@@ -43,10 +47,6 @@ import {
   cleanUpTagSettings,
   renderTagSettings,
 } from './settings/TagColorSettings';
-import {
-  cleanUpDateSettings,
-  renderDateSettings,
-} from './settings/DateColorSettings';
 
 const numberRegEx = /^\d+(?:\.\d+)?$/;
 

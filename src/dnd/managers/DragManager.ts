@@ -10,10 +10,10 @@ import { rafThrottle } from '../util/animation';
 import { createHTMLDndEntity } from '../util/createHTMLDndEntity';
 import { Emitter } from '../util/emitter';
 import {
-  adjustHitboxForMovement,
-  distanceBetween,
-  getBestIntersect,
-  getScrollIntersection,
+    adjustHitboxForMovement,
+    distanceBetween,
+    getBestIntersect,
+    getScrollIntersection,
 } from '../util/hitbox';
 
 export interface DragEventData {

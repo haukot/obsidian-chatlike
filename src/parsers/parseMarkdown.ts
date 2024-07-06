@@ -10,14 +10,14 @@ import { StateManager } from 'src/StateManager';
 import { frontMatterKey, getLinkedPageMetadata } from './common';
 import { blockidExtension, blockidFromMarkdown } from './extensions/blockid';
 import {
-  genericWrappedExtension,
-  genericWrappedFromMarkdown,
+    genericWrappedExtension,
+    genericWrappedFromMarkdown,
 } from './extensions/genericWrapped';
 import { internalMarkdownLinks } from './extensions/internalMarkdownLink';
 import { tagExtension, tagFromMarkdown } from './extensions/tag';
 import {
-  gfmTaskListItem,
-  gfmTaskListItemFromMarkdown,
+    gfmTaskListItem,
+    gfmTaskListItemFromMarkdown,
 } from './extensions/taskList';
 import { FileAccessor } from './helpers/parser';
 

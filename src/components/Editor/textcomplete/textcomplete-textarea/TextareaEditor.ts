@@ -1,8 +1,8 @@
 import {
-  CursorOffset,
-  Editor,
-  SearchResult,
-  createCustomEvent,
+    CursorOffset,
+    Editor,
+    SearchResult,
+    createCustomEvent,
 } from '../textcomplete-core';
 import { calculateElementOffset, getLineHeightPx } from '../textcomplete-utils';
 import { update } from '../undate/update';

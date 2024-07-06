@@ -6,7 +6,6 @@ import { StateManager } from 'src/StateManager';
 
 import { BoardModifiers } from '../../helpers/boardModifiers';
 import { c } from '../helpers';
-import { Icon } from '../Icon/Icon';
 import { Item } from '../types';
 
 interface ItemCheckboxProps {

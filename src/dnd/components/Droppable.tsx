@@ -3,11 +3,11 @@ import Preact from 'preact/compat';
 import { EntityManager } from '../managers/EntityManager';
 import { EntityData, WithChildren } from '../types';
 import {
-  DndManagerContext,
-  EntityManagerContext,
-  ScopeIdContext,
-  ScrollManagerContext,
-  SortManagerContext,
+    DndManagerContext,
+    EntityManagerContext,
+    ScopeIdContext,
+    ScrollManagerContext,
+    SortManagerContext,
 } from './context';
 
 interface DraggableProps extends WithChildren {

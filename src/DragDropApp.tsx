@@ -18,8 +18,7 @@ import {
   getEntityFromPath,
   insertEntity,
   moveEntity,
-  removeEntity,
-  updateEntity,
+  removeEntity
 } from './dnd/util/data';
 import { getBoardModifiers } from './helpers/boardModifiers';
 import { KanbanView } from './KanbanView';
