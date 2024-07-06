@@ -102,7 +102,7 @@ export const Kanban = ({ view, stateManager }: KanbanProps) => {
 
     const focusLastChatInput = () => {
         // TODO: поправить здесь чтобы выбирался инпут в нужной Lane.
-        view.contentEl.querySelector('.' + c('item-input')).focus();
+        (view.contentEl.querySelector('.' + c('item-input')) as HTMLTextAreaElement).focus();
     };
 
     view.emitter.on('toggleLaneHeaders', toggleLaneHeaders);

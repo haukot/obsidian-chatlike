@@ -28,6 +28,7 @@ export interface BoardModifiers {
   deleteEntity: (path: Path) => void;
   updateItem: (path: Path, item: Item) => void;
   duplicateEntity: (path: Path) => void;
+  setEditLastItem: (laneIndex: number) => void;
 }
 
 export function getBoardModifiers(stateManager: StateManager): BoardModifiers {

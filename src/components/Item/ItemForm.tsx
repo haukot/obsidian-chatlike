@@ -16,7 +16,7 @@ interface ItemFormProps {
   isInputVisible: boolean;
   setIsInputVisible: Preact.StateUpdater<boolean>;
   setEditLastItem: (e: KeyboardEvent) => void;
-  hookFocus: (Function) => void;
+  hookFocus: (fun: Function) => void;
   hideButton?: boolean;
 }
 

@@ -22,7 +22,7 @@ interface MarkdownEditorProps
   extends Preact.DetailedHTMLProps<Preact.HTMLAttributes<HTMLTextAreaElement>> {
   onEnter: (e: KeyboardEvent) => void;
   onEscape: (e: KeyboardEvent) => void;
-  onArrowUp: (e: KeyboardEvent) => void;
+  onArrowUp?: (e: KeyboardEvent) => void;
   onSubmit: () => void;
 }
 
@@ -70,7 +70,7 @@ export const MarkdownEditor = Preact.forwardRef(function MarkdownEditor(
         return unpairMarkdown(e.target as HTMLTextAreaElement);
       }
 
-      if (e.key === 'ArrowUp' && e.target.value == '') {
+        if (e.key === 'ArrowUp' && (e.target as HTMLTextAreaElement).value == '') {
         onArrowUp && onArrowUp(e);
       }
 

@@ -222,6 +222,7 @@ export function DragDropApp({
                       lane={data as Lane}
                       laneIndex={0}
                       isStatic={true}
+                      isLaneHeadersVisible={true} // TODO: тут должно быть иное значение?
                     />
                   </div>
                 </KanbanContext.Provider>
@@ -236,6 +237,7 @@ export function DragDropApp({
                       item={data as Item}
                       itemIndex={0}
                       isStatic={true}
+                      onSave={() => {}} // TODO: тут должно быть иное значение?
                     />
                   </div>
                 </KanbanContext.Provider>

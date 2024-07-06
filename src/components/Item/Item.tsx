@@ -29,7 +29,7 @@ export interface ItemInnerProps {
   shouldMarkItemsComplete?: boolean;
   isMatch?: boolean;
   onSave: () => void,
-  measureRef: Preact.RefObject<HTMLElement | null>;
+  measureRef: Preact.RefObject<HTMLDivElement | null>;
   searchQuery?: string;
 }
 
@@ -218,7 +218,7 @@ export const DraggableItem = Preact.memo(function DraggableItem(
 interface ItemsProps {
   isStatic?: boolean;
   items: Item[];
-  onItemSave: (item: Item, index: i) => void,
+  onItemSave: (item: Item, index: number) => void,
   shouldMarkItemsComplete: boolean;
 }
 
