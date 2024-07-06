@@ -52,7 +52,7 @@ export const DraggableLane = Preact.memo(function DraggableLane({
 
   useDragHandle(measureRef, dragHandleRef);
 
-  const _firstRender = Preact.useEffect(() => {
+  Preact.useEffect(() => {
     view.getWindow().setTimeout(() => {
       const laneItems = elementRef.current?.getElementsByClassName(
         c('lane-items')
@@ -112,7 +112,7 @@ export const DraggableLane = Preact.memo(function DraggableLane({
   }, [focusItemFormFn]);
 
 
-  const setEditLastItem = (e: KeyboardEvent) => {
+  const setEditLastItem = () => {
     boardModifiers.setEditLastItem(laneIndex);
   }
 

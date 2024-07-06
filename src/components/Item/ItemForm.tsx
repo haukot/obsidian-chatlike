@@ -51,11 +51,6 @@ export function ItemForm({
     }
   );
 
-  const clear = Preact.useCallback(() => {
-    setItemTitle('');
-    setIsInputVisible(false);
-  }, []);
-
   const addItemsFromStrings = async (titles: string[]) => {
     try {
       addItems(
@@ -76,12 +71,9 @@ export function ItemForm({
     if (!title) return;
     // добавляем текущую дату
     const dateFormat = stateManager.getSetting('date-format');
-    const timeFormat = stateManager.getSetting('time-format');
     const shouldLinkDates = stateManager.getSetting('link-date-to-daily-note');
     const dateTrigger = stateManager.getSetting('date-trigger');
-    const timeTrigger = stateManager.getSetting('time-trigger');
 
-    const time = moment().format(timeFormat);
     const formattedDate = moment().format(dateFormat);
     const wrappedDate = shouldLinkDates
       ? buildLinkToDailyNote(stateManager.app, formattedDate)
@@ -100,7 +92,7 @@ export function ItemForm({
     }
   };
 
-  const onEscape = (e: KeyboardEvent) => {
+  const onEscape = () => {
     inputRef.current.blur()
   };
 

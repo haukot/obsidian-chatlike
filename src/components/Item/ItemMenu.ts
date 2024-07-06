@@ -39,8 +39,6 @@ export function useItemMenu({
         );
       } else {
         const coordinates = { x: e.clientX, y: e.clientY };
-        const hasDate = !!item.data.metadata.date;
-        const hasTime = !!item.data.metadata.time;
 
         const menu = new Menu().addItem((i) => {
           i.setIcon('lucide-edit')

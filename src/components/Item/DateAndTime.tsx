@@ -70,9 +70,7 @@ export function DateAndTime({
   getDateColor,
 }: DateProps & DateAndTimeProps) {
   const hideDateDisplay = stateManager.useSetting('hide-date-display');
-  const dateFormat = stateManager.useSetting('date-format');
   const timeFormat = stateManager.useSetting('time-format');
-  const dateDisplayFormat = stateManager.useSetting('date-display-format');
   const shouldLinkDate = stateManager.useSetting('link-date-to-daily-note');
 
   const dateColor = Preact.useMemo(() => {
