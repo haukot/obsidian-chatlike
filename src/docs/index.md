@@ -14,9 +14,6 @@ Create markdown-backed Kanban boards in [Obsidian](https://obsidian.md/)
 
 ## [[Settings/index|Settings]]
 
-- [[Settings/Add date and time to archived cards|Add date and time to archived cards]]
-- [[Settings/Archive date time format|Archive date time format]]
-- [[Settings/Archive date time separator|Archive date time separator]]
 - [[Settings/Board header buttons|Board header buttons]]
 - [[Settings/Date display format|Date display format]]
 - [[Settings/Date format|Date format]]
@@ -30,7 +27,6 @@ Create markdown-backed Kanban boards in [Obsidian](https://obsidian.md/)
 - [[Settings/Link dates to daily notes|Link dates to daily notes]]
 - [[Settings/Linked page metadata|Linked page metadata]]
 - [[Settings/Local vs. global settings|Local vs. global settings]]
-- [[Settings/Maximum number of archived cards|Maximum number of archived cards]]
 - [[Settings/New line trigger|New line trigger]]
 - [[Settings/Note folder|Note folder]]
 - [[Settings/Note template|Note template]]

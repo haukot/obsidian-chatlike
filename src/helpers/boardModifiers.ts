@@ -27,30 +27,12 @@ export interface BoardModifiers {
   addLane: (lane: Lane) => void;
   insertLane: (path: Path, lane: Lane) => void;
   updateLane: (path: Path, lane: Lane) => void;
-  archiveLane: (path: Path) => void;
-  archiveLaneItems: (path: Path) => void;
   deleteEntity: (path: Path) => void;
   updateItem: (path: Path, item: Item) => void;
-  archiveItem: (path: Path) => void;
   duplicateEntity: (path: Path) => void;
 }
 
 export function getBoardModifiers(stateManager: StateManager): BoardModifiers {
-  const appendArchiveDate = (item: Item) => {
-    const archiveDateFormat = stateManager.getSetting('prepend-archive-format');
-    const archiveDateSeparator = stateManager.getSetting(
-      'prepend-archive-separator'
-    );
-    const newTitle = [moment().format(archiveDateFormat)];
-
-    if (archiveDateSeparator) newTitle.push(archiveDateSeparator);
-
-    newTitle.push(item.data.titleRaw);
-
-    const titleRaw = newTitle.join(' ');
-    return stateManager.updateItemContent(item, titleRaw);
-  };
-
   return {
     appendItems: (path: Path, items: Item[]) => {
       items.forEach((item) =>
@@ -188,69 +170,6 @@ export function getBoardModifiers(stateManager: StateManager): BoardModifiers {
       );
     },
 
-    archiveLane: (path: Path) => {
-      stateManager.setState(async (boardData) => {
-        const lane = getEntityFromPath(boardData, path);
-        const items = lane.children;
-
-        stateManager.app.workspace.trigger(
-          'kanban:lane-archived',
-          stateManager.file,
-          lane
-        );
-
-        try {
-          return update(removeEntity(boardData, path), {
-            data: {
-              archive: {
-                $unshift: stateManager.getSetting('prepend-archive-date')
-                  ? await Promise.all(items.map(appendArchiveDate))
-                  : items,
-              },
-            },
-          });
-        } catch (e) {
-          stateManager.setError(e);
-          return boardData;
-        }
-      });
-    },
-
-    archiveLaneItems: (path: Path) => {
-      stateManager.setState(async (boardData) => {
-        const lane = getEntityFromPath(boardData, path);
-        const items = lane.children;
-
-        stateManager.app.workspace.trigger(
-          'kanban:lane-cards-archived',
-          stateManager.file,
-          items
-        );
-
-        try {
-          return update(
-            updateEntity(boardData, path, {
-              children: {
-                $set: [],
-              },
-            }),
-            {
-              data: {
-                archive: {
-                  $unshift: stateManager.getSetting('prepend-archive-date')
-                    ? await Promise.all(items.map(appendArchiveDate))
-                    : items,
-                },
-              },
-            }
-          );
-        } catch (e) {
-          stateManager.setError(e);
-          return boardData;
-        }
-      });
-    },
-
     deleteEntity: (path: Path) => {
       stateManager.setState((boardData) => {
         const entity = getEntityFromPath(boardData, path);
@@ -283,36 +202,6 @@ export function getBoardModifiers(stateManager: StateManager): BoardModifiers {
             },
           },
         });
-      });
-    },
-
-    archiveItem: (path: Path) => {
-      stateManager.setState(async (boardData) => {
-        const item = getEntityFromPath(boardData, path);
-
-        stateManager.app.workspace.trigger(
-          'kanban:card-archived',
-          stateManager.file,
-          path,
-          item
-        );
-
-        try {
-          return update(removeEntity(boardData, path), {
-            data: {
-              archive: {
-                $push: [
-                  stateManager.getSetting('prepend-archive-date')
-                    ? await appendArchiveDate(item)
-                    : item,
-                ],
-              },
-            },
-          });
-        } catch (e) {
-          stateManager.setError(e);
-          return boardData;
-        }
       });
     },
 

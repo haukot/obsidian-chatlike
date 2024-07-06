@@ -128,12 +128,6 @@ export const LaneHeader = Preact.memo(function LaneHeader({
           action={confirmAction}
           onAction={() => {
             switch (confirmAction) {
-              case 'archive':
-                boardModifiers.archiveLane(lanePath);
-                break;
-              case 'archive-items':
-                boardModifiers.archiveLaneItems(lanePath);
-                break;
               case 'delete':
                 boardModifiers.deleteEntity(lanePath);
                 break;

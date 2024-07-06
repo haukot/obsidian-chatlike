@@ -9,7 +9,7 @@ import { KanbanContext } from '../context';
 import { c, generateInstanceId } from '../helpers';
 import { Lane, LaneTemplate } from '../types';
 
-export type LaneAction = 'delete' | 'archive' | 'archive-items' | null;
+export type LaneAction = 'delete' | null;
 
 const actionLabels = {
   delete: {
@@ -17,16 +17,6 @@ const actionLabels = {
       'Are you sure you want to delete this list and all its cards?'
     ),
     confirm: t('Yes, delete list'),
-  },
-  archive: {
-    description: t(
-      'Are you sure you want to archive this list and all its cards?'
-    ),
-    confirm: t('Yes, archive list'),
-  },
-  'archive-items': {
-    description: t('Are you sure you want to archive all cards in this list?'),
-    confirm: t('Yes, archive cards'),
   },
 };
 
@@ -91,12 +81,6 @@ export function useSettingsMenu({
           .setTitle(t('Edit list'))
           .onClick(() => setIsEditing(true));
       })
-      .addItem((item) => {
-        item
-          .setIcon('lucide-archive')
-          .setTitle(t('Archive cards'))
-          .onClick(() => setConfirmAction('archive-items'));
-      })
       .addSeparator()
       .addItem((i) => {
         i.setIcon('corner-left-down')
@@ -135,12 +119,6 @@ export function useSettingsMenu({
           });
       })
       .addSeparator()
-      .addItem((item) => {
-        item
-          .setIcon('lucide-archive')
-          .setTitle(t('Archive list'))
-          .onClick(() => setConfirmAction('archive'));
-      })
       .addItem((item) => {
         item
           .setIcon('lucide-trash-2')

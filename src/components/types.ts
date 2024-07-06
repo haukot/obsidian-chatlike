@@ -82,7 +82,6 @@ export interface BoardData {
   isSearching: boolean;
   settings: KanbanSettings;
   frontmatter: Record<string, number | string | Array<number | string>>;
-  archive: Item[];
   errors: ErrorReport[];
 }
 

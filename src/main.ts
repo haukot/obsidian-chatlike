@@ -487,19 +487,6 @@ export default class KanbanPlugin extends Plugin {
     });
 
     this.addCommand({
-      id: 'archive-completed-cards',
-      name: t('Archive completed cards in active board'),
-      checkCallback: (checking) => {
-        const activeView = app.workspace.getActiveViewOfType(KanbanView);
-
-        if (!activeView) return false;
-        if (checking) return true;
-
-        this.stateManagers.get(activeView.file).archiveCompletedCards();
-      },
-    });
-
-    this.addCommand({
       id: 'toggle-kanban-view',
       name: t('Toggle between Kanban and markdown mode'),
       checkCallback: (checking) => {

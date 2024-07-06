@@ -24,7 +24,6 @@ export interface BaseFormat {
 }
 
 export const completeString = `**${t('Complete')}**`;
-export const archiveString = '***';
 export const basicFrontmatter = [
   '---',
   '',

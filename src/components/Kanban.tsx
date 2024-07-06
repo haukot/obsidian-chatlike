@@ -54,7 +54,6 @@ export const Kanban = ({ view, stateManager }: KanbanProps) => {
   );
 
   const filePath = stateManager.file.path;
-  const maxArchiveLength = stateManager.useSetting('max-archive-size');
   const dateColors = stateManager.useSetting('date-colors');
   const tagColors = stateManager.useSetting('tag-colors');
 
@@ -143,27 +142,6 @@ export const Kanban = ({ view, stateManager }: KanbanProps) => {
       win.clearTimeout(id);
     };
   }, [searchQuery, view]);
-
-  Preact.useEffect(() => {
-    if (maxArchiveLength === undefined || maxArchiveLength === -1) {
-      return;
-    }
-
-    if (
-      typeof maxArchiveLength === 'number' &&
-      boardData?.data.archive.length > maxArchiveLength
-    ) {
-      stateManager.setState((board) =>
-        update(board, {
-          data: {
-            archive: {
-              $set: board.data.archive.slice(maxArchiveLength * -1),
-            },
-          },
-        })
-      );
-    }
-  }, [boardData?.data.archive.length, maxArchiveLength]);
 
   const boardModifiers = Preact.useMemo(() => {
     return getBoardModifiers(stateManager);

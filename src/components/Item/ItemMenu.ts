@@ -209,11 +209,6 @@ export function useItemMenu({
               .onClick(() => boardModifiers.moveItemToBottom(path));
           })
           .addItem((i) => {
-            i.setIcon('lucide-archive')
-              .setTitle(t('Archive card'))
-              .onClick(() => boardModifiers.archiveItem(path));
-          })
-          .addItem((i) => {
             i.setIcon('lucide-trash-2')
               .setTitle(t('Delete card'))
               .onClick(() => boardModifiers.deleteEntity(path));

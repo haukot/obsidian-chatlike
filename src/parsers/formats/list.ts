@@ -1,5 +1,5 @@
 import update from 'immutability-helper';
-import { Content, List, Parent, Root } from 'mdast';
+import { List, Parent, Root } from 'mdast';
 import { ListItem, Paragraph } from 'mdast-util-from-markdown/lib';
 import { toString } from 'mdast-util-to-string';
 import { stringifyYaml } from 'obsidian';
@@ -20,13 +20,11 @@ import { t } from 'src/lang/helpers';
 import { KanbanSettings } from 'src/Settings';
 import { StateManager } from 'src/StateManager';
 
-import { archiveString, completeString, settingsToCodeblock } from '../common';
+import { completeString, settingsToCodeblock } from '../common';
 import { DateNode, FileNode, TimeNode, ValueNode } from '../extensions/types';
 import {
   getNextOfType,
-  getNodeContentBoundary,
-  getPrevSibling,
-  getStringFromBoundary,
+  getNodeContentBoundary, getStringFromBoundary
 } from '../helpers/ast';
 import { hydrateItem } from '../helpers/hydrateBoard';
 import {
@@ -163,24 +161,6 @@ export function listItemToItemData(
 
   return itemData;
 }
-
-function isArchiveLane(
-  child: Content,
-  children: Content[],
-  currentIndex: number
-) {
-  if (
-    child.type !== 'heading' ||
-    toString(child, { includeImageAlt: false }) !== t('Archive')
-  ) {
-    return false;
-  }
-
-  const prev = getPrevSibling(children, currentIndex);
-
-  return prev && prev.type === 'thematicBreak';
-}
-
 export function astToUnhydratedBoard(
   stateManager: StateManager,
   settings: KanbanSettings,
@@ -189,11 +169,9 @@ export function astToUnhydratedBoard(
   md: string
 ): Board {
   const lanes: Lane[] = [];
-  const archive: Item[] = [];
 
   root.children.forEach((child, index) => {
     if (child.type === 'heading') {
-      const isArchive = isArchiveLane(child, root.children, index);
       const headingBoundary = getNodeContentBoundary(child as Parent);
       const title = getStringFromBoundary(md, headingBoundary);
 
@@ -217,20 +195,6 @@ export function astToUnhydratedBoard(
 
         return true;
       });
-
-      if (isArchive && list) {
-        archive.push(
-          ...(list as List).children.map((listItem) => {
-            return {
-              ...ItemTemplate,
-              id: generateInstanceId(),
-              data: listItemToItemData(stateManager, md, listItem),
-            };
-          })
-        );
-
-        return;
-      }
 
       if (!list) {
         lanes.push({
@@ -269,7 +233,6 @@ export function astToUnhydratedBoard(
     data: {
       settings,
       frontmatter,
-      archive,
       isSearching: false,
       errors: [],
     },
@@ -407,20 +370,6 @@ function laneToMd(lane: Lane) {
   return lines.join('\n');
 }
 
-function archiveToMd(archive: Item[]) {
-  if (archive.length) {
-    const lines: string[] = [archiveString, '', `## ${t('Archive')}`, ''];
-
-    archive.forEach((item) => {
-      lines.push(itemToMd(item));
-    });
-
-    return lines.join('\n');
-  }
-
-  return '';
-}
-
 export function boardToMd(board: Board) {
   const lanes = board.children.reduce((md, lane) => {
     return md + laneToMd(lane);
@@ -438,7 +387,6 @@ export function boardToMd(board: Board) {
   return (
     frontmatter +
     lanes +
-    archiveToMd(board.data.archive) +
     settingsToCodeblock(board.data.settings)
   );
 }
