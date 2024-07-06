@@ -66,22 +66,17 @@ export interface KanbanSettings {
   'hide-tags-in-title'?: boolean;
   'lane-width'?: number;
   'link-date-to-daily-note'?: boolean;
-  'max-archive-size'?: number;
   'metadata-keys'?: DataKey[];
   'new-card-insertion-method'?: 'prepend' | 'prepend-compact' | 'append';
   'new-line-trigger'?: 'enter' | 'shift-enter';
   'new-note-folder'?: string;
   'new-note-template'?: string;
-  'prepend-archive-date'?: boolean;
-  'prepend-archive-format'?: string;
-  'prepend-archive-separator'?: string;
   'show-checkboxes'?: boolean;
   'show-relative-date'?: boolean;
   'time-format'?: string;
   'time-trigger'?: string;
 
   'show-add-list'?: boolean;
-  'show-archive-all'?: boolean;
   'show-view-as-markdown'?: boolean;
   'show-board-settings'?: boolean;
   'show-search'?: boolean;
@@ -104,21 +99,16 @@ export const settingKeyLookup: Record<keyof KanbanSettings, true> = {
   'hide-tags-in-title': true,
   'lane-width': true,
   'link-date-to-daily-note': true,
-  'max-archive-size': true,
   'metadata-keys': true,
   'new-card-insertion-method': true,
   'new-line-trigger': true,
   'new-note-folder': true,
   'new-note-template': true,
-  'prepend-archive-date': true,
-  'prepend-archive-format': true,
-  'prepend-archive-separator': true,
   'show-checkboxes': true,
   'show-relative-date': true,
   'time-format': true,
   'time-trigger': true,
   'show-add-list': true,
-  'show-archive-all': true,
   'show-view-as-markdown': true,
   'show-board-settings': true,
   'show-search': true,
@@ -372,45 +362,6 @@ export class SettingsManager {
       });
 
     new Setting(contentEl)
-      .setName(t('Maximum number of archived cards'))
-      .setDesc(
-        t(
-          "Archived cards can be viewed in markdown mode. This setting will begin removing old cards once the limit is reached. Setting this value to -1 will allow a board's archive to grow infinitely."
-        )
-      )
-      .addText((text) => {
-        const [value, globalValue] = this.getSetting('max-archive-size', local);
-
-        text.inputEl.setAttr('type', 'number');
-        text.inputEl.placeholder = `${
-          globalValue ? globalValue : '-1'
-        } (default)`;
-        text.inputEl.value = value ? value.toString() : '';
-
-        text.onChange((val) => {
-          if (val && numberRegEx.test(val)) {
-            text.inputEl.removeClass('error');
-
-            this.applySettingsUpdate({
-              'max-archive-size': {
-                $set: parseInt(val),
-              },
-            });
-
-            return;
-          }
-
-          if (val) {
-            text.inputEl.addClass('error');
-          }
-
-          this.applySettingsUpdate({
-            $unset: ['max-archive-size'],
-          });
-        });
-      });
-
-    new Setting(contentEl)
       .setName(t('Display card checkbox'))
       .setDesc(t('When toggled, a checkbox will be displayed with each card'))
       .then((setting) => {
@@ -626,54 +577,6 @@ export class SettingsManager {
             });
         });
     });
-
-    new Setting(contentEl)
-      .setName(t('Archive completed cards'))
-      .then((setting) => {
-        let toggleComponent: ToggleComponent;
-
-        setting
-          .addToggle((toggle) => {
-            toggleComponent = toggle;
-
-            const [value, globalValue] = this.getSetting(
-              'show-archive-all',
-              local
-            );
-
-            if (value !== undefined && value !== null) {
-              toggle.setValue(value as boolean);
-            } else if (globalValue !== undefined && globalValue !== null) {
-              toggle.setValue(globalValue as boolean);
-            } else {
-              // default
-              toggle.setValue(true);
-            }
-
-            toggle.onChange((newValue) => {
-              this.applySettingsUpdate({
-                'show-archive-all': {
-                  $set: newValue,
-                },
-              });
-            });
-          })
-          .addExtraButton((b) => {
-            b.setIcon('lucide-rotate-ccw')
-              .setTooltip(t('Reset to default'))
-              .onClick(() => {
-                const [, globalValue] = this.getSetting(
-                  'show-archive-all',
-                  local
-                );
-                toggleComponent.setValue(!!globalValue);
-
-                this.applySettingsUpdate({
-                  $unset: ['show-archive-all'],
-                });
-              });
-          });
-      });
 
     new Setting(contentEl).setName(t('Open as markdown')).then((setting) => {
       let toggleComponent: ToggleComponent;
@@ -1267,156 +1170,6 @@ export class SettingsManager {
                 });
               });
           });
-      });
-
-    new Setting(contentEl)
-      .setName(t('Add date and time to archived cards'))
-      .setDesc(
-        t(
-          'When toggled, the current date and time will be added to the beginning of a card when it is archived. Eg. - [ ] 2021-05-14 10:00am My card title'
-        )
-      )
-      .then((setting) => {
-        let toggleComponent: ToggleComponent;
-
-        setting
-          .addToggle((toggle) => {
-            toggleComponent = toggle;
-
-            const [value, globalValue] = this.getSetting(
-              'prepend-archive-date',
-              local
-            );
-
-            if (value !== undefined) {
-              toggle.setValue(value as boolean);
-            } else if (globalValue !== undefined) {
-              toggle.setValue(globalValue as boolean);
-            }
-
-            toggle.onChange((newValue) => {
-              this.applySettingsUpdate({
-                'prepend-archive-date': {
-                  $set: newValue,
-                },
-              });
-            });
-          })
-          .addExtraButton((b) => {
-            b.setIcon('lucide-rotate-ccw')
-              .setTooltip(t('Reset to default'))
-              .onClick(() => {
-                const [, globalValue] = this.getSetting(
-                  'prepend-archive-date',
-                  local
-                );
-                toggleComponent.setValue(!!globalValue);
-
-                this.applySettingsUpdate({
-                  $unset: ['prepend-archive-date'],
-                });
-              });
-          });
-      });
-
-    new Setting(contentEl)
-      .setName(t('Archive date/time separator'))
-      .setDesc(
-        t('This will be used to separate the archived date/time from the title')
-      )
-      .addText((text) => {
-        const [value, globalValue] = this.getSetting(
-          'prepend-archive-separator',
-          local
-        );
-
-        text.inputEl.placeholder = globalValue
-          ? `${globalValue} (default)`
-          : '';
-        text.inputEl.value = value ? (value as string) : '';
-
-        text.onChange((val) => {
-          if (val) {
-            this.applySettingsUpdate({
-              'prepend-archive-separator': {
-                $set: val,
-              },
-            });
-
-            return;
-          }
-
-          this.applySettingsUpdate({
-            $unset: ['prepend-archive-separator'],
-          });
-        });
-      });
-
-    new Setting(contentEl)
-      .setName(t('Archive date/time format'))
-      .then((setting) => {
-        setting.addMomentFormat((mf) => {
-          setting.descEl.appendChild(
-            createFragment((frag) => {
-              frag.appendText(t('For more syntax, refer to') + ' ');
-              frag.createEl(
-                'a',
-                {
-                  text: t('format reference'),
-                  href: 'https://momentjs.com/docs/#/displaying/format/',
-                },
-                (a) => {
-                  a.setAttr('target', '_blank');
-                }
-              );
-              frag.createEl('br');
-              frag.appendText(t('Your current syntax looks like this') + ': ');
-              mf.setSampleEl(frag.createEl('b', { cls: 'u-pop' }));
-              frag.createEl('br');
-            })
-          );
-
-          const [value, globalValue] = this.getSetting(
-            'prepend-archive-format',
-            local
-          );
-
-          const [dateFmt, globalDateFmt] = this.getSetting(
-            'date-format',
-            local
-          );
-          const defaultDateFmt =
-            dateFmt || globalDateFmt || getDefaultDateFormat(this.app);
-          const [timeFmt, globalTimeFmt] = this.getSetting(
-            'time-format',
-            local
-          );
-          const defaultTimeFmt =
-            timeFmt || globalTimeFmt || getDefaultTimeFormat(this.app);
-
-          const defaultFormat = `${defaultDateFmt} ${defaultTimeFmt}`;
-
-          mf.setPlaceholder(defaultFormat);
-          mf.setDefaultFormat(defaultFormat);
-
-          if (value || globalValue) {
-            mf.setValue((value || globalValue) as string);
-          }
-
-          mf.onChange((newValue) => {
-            if (newValue) {
-              this.applySettingsUpdate({
-                'prepend-archive-format': {
-                  $set: newValue,
-                },
-              });
-            } else {
-              this.applySettingsUpdate({
-                $unset: ['prepend-archive-format'],
-              });
-            }
-          });
-        });
       });
 
     new Setting(contentEl)

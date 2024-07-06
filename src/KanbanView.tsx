@@ -219,16 +219,6 @@ export class KanbanView extends TextFileView implements HoverParent {
               board.data.settings
             ).open();
           });
-      })
-      .addItem((item) => {
-        item
-          .setTitle(t('Archive completed cards'))
-          .setIcon('lucide-archive')
-          .setSection('pane')
-          .onClick(() => {
-            const stateManager = this.plugin.stateManagers.get(this.file);
-            stateManager.archiveCompletedCards();
-          });
       });
 
     if (callSuper) {
@@ -318,26 +308,6 @@ export class KanbanView extends TextFileView implements HoverParent {
     ) {
       this.actionButtons['show-view-as-markdown'].remove();
       delete this.actionButtons['show-view-as-markdown'];
-    }
-
-    if (
-      stateManager.getSetting('show-archive-all') &&
-      !this.actionButtons['show-archive-all']
-    ) {
-      this.actionButtons['show-archive-all'] = this.addAction(
-        'lucide-archive',
-        t('Archive completed cards'),
-        () => {
-          const stateManager = this.plugin.stateManagers.get(this.file);
-          stateManager.archiveCompletedCards();
-        }
-      );
-    } else if (
-      !stateManager.getSetting('show-archive-all') &&
-      this.actionButtons['show-archive-all']
-    ) {
-      this.actionButtons['show-archive-all'].remove();
-      delete this.actionButtons['show-archive-all'];
     }
 
     if (

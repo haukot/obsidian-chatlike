@@ -255,10 +255,6 @@ export class StateManager {
       this.getSettingRaw('time-format', suppliedSettings) ||
       getDefaultTimeFormat(this.app);
 
-    const archiveDateFormat =
-      this.getSettingRaw('prepend-archive-format', suppliedSettings) ||
-      `${dateFormat} ${timeFormat}`;
-
     this.compiledSettings = {
       'date-format': dateFormat,
       'date-display-format':
@@ -284,13 +280,8 @@ export class StateManager {
         suppliedSettings
       ),
       'metadata-keys': [...globalKeys, ...localKeys],
-      'prepend-archive-separator':
-        this.getSettingRaw('prepend-archive-separator') || '',
-      'prepend-archive-format': archiveDateFormat,
       'show-add-list':
         this.getSettingRaw('show-add-list', suppliedSettings) ?? true,
-      'show-archive-all':
-        this.getSettingRaw('show-archive-all', suppliedSettings) ?? true,
       'show-view-as-markdown':
         this.getSettingRaw('show-view-as-markdown', suppliedSettings) ?? true,
       'show-board-settings':
@@ -354,7 +345,6 @@ export class StateManager {
       id: this.file.path,
       children: [],
       data: {
-        archive: [],
         settings: { 'chatlike-plugin': 'basic' },
         frontmatter: {},
         isSearching: false,
@@ -403,68 +393,6 @@ export class StateManager {
       this.setState(await this.getParsedBoard(this.getAView().data), false);
     } catch (e) {
       console.error(e);
-      this.setError(e);
-    }
-  }
-
-  async archiveCompletedCards() {
-    const board = this.state;
-
-    const archived: Item[] = [];
-    const shouldAppendArchiveDate = !!this.getSetting('prepend-archive-date');
-    const archiveDateSeparator = this.getSetting('prepend-archive-separator');
-    const archiveDateFormat = this.getSetting('prepend-archive-format');
-
-    const appendArchiveDate = (item: Item) => {
-      const newTitle = [moment().format(archiveDateFormat)];
-
-      if (archiveDateSeparator) newTitle.push(archiveDateSeparator);
-
-      newTitle.push(item.data.titleRaw);
-
-      const titleRaw = newTitle.join(' ');
-
-      return this.parser.updateItemContent(item, titleRaw);
-    };
-
-    const lanes = board.children.map((lane) => {
-      return update(lane, {
-        children: {
-          $set: lane.children.filter((item) => {
-            if (lane.data.shouldMarkItemsComplete || item.data.isComplete) {
-              archived.push(item);
-            }
-
-            return !item.data.isComplete && !lane.data.shouldMarkItemsComplete;
-          }),
-        },
-      });
-    });
-
-    this.app.workspace.trigger(
-      'kanban:board-cards-archived',
-      this.file,
-      archived
-    );
-
-    try {
-      this.setState(
-        update(board, {
-          children: {
-            $set: lanes,
-          },
-          data: {
-            archive: {
-              $push: shouldAppendArchiveDate
-                ? await Promise.all(
-                    archived.map((item) => appendArchiveDate(item))
-                  )
-                : archived,
-            },
-          },
-        })
-      );
-    } catch (e) {
       this.setError(e);
     }
   }
