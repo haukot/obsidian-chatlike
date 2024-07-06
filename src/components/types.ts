@@ -4,20 +4,12 @@ import { Nestable } from 'src/dnd/types';
 import { FileAccessor } from 'src/parsers/helpers/parser';
 import { KanbanSettings } from 'src/Settings';
 
-export enum LaneSort {
-  TitleAsc,
-  TitleDsc,
-  DateAsc,
-  DateDsc,
-}
-
 export interface LaneData {
   shouldMarkItemsComplete?: boolean;
   title: string;
   maxItems?: number;
   dom?: HTMLDivElement;
   forceEditMode?: boolean;
-  sorted?: LaneSort;
 }
 
 export interface DataKey {

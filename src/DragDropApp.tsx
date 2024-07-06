@@ -141,21 +141,6 @@ export function DragDropApp({
             return newBoard;
           }
 
-          // Remove sorting in the destination lane
-          const destinationParentPath = dropPath.slice(0, -1);
-          const destinationParent = getEntityFromPath(
-            board,
-            destinationParentPath
-          );
-
-          if (destinationParent?.data?.sorted !== undefined) {
-            return updateEntity(newBoard, destinationParentPath, {
-              data: {
-                $unset: ['sorted'],
-              },
-            });
-          }
-
           return newBoard;
         });
       }
